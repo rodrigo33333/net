@@ -1,0 +1,497 @@
+/* ===== RESET Y BASE ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    background-color: #20182e;
+    color: #333;
+}
+
+/* ===== NAVEGACIÓN ===== */
+.contenedor-navegacion {
+    background-color: #683877;
+    padding: 0rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.contenido-navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.logo h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.rojo { color: #e63946; }
+.azul { color: #457b9d; }
+
+.navegacion {
+    display: flex;
+    gap: 2rem;
+}
+
+.navegacion a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.navegacion a:hover {
+    color: #e63946;
+}
+
+.hamburguesa {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburguesa span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+}
+
+/* ===== HEADER / HERO ===== */
+.encabezado {
+    background: url('../imagenes/gtafondo.jpg') center/cover no-repeat;
+    padding-bottom: 3rem;
+    min-height: 500px;
+    background-position: bottom center;
+}
+
+.contenido-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.contenedor-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-top: 3rem;
+}
+
+.texto-encabezado h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #362a44;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+.bordes {
+    border: 2px solid #e63946;
+    color: #e63946;
+    background: transparent;
+}
+
+.bordes:hover {
+    background: #e63946;
+    color: #fff;
+}
+
+.imagen img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* ===== CONTENEDOR CARDS (2 en 2) ===== */
+.contenedor-cards {
+    display: grid;
+     padding: 0.75rem 0.75rem 0 0.75rem;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 0.25rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+    
+}
+
+.card {
+    background: #6d5454;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+}
+
+.card-header {
+    display: flex;
+    align-items: flex-start; /* imagen y título alineados arriba */
+    gap: 1rem;
+    padding: 1.25rem;
+}
+
+.card-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0; /* evita que la imagen se achique */
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+}
+
+.titulo {
+    background:#20182e;
+}
+
+.card-content {
+    padding: 0.5rem 1.25rem 1.25rem;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #fdfdfd;
+}
+
+/* ===== SECCIÓN INFERIOR: cards-derecha al lado de las cards 2 en 2 ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* dos columnas iguales */
+    gap: 1.5rem;
+}
+
+/* Si quieres que .contenedor-cards y .container queden lado a lado en una sección,
+   envuélvelos en un flex/grid contenedor. Si van separados, este CSS ya organiza
+   .cards-derecha internamente con sus dos cards una debajo de la otra */
+
+.cards-derecha {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+
+
+.card1 {
+     padding: 0.75rem 0.75rem 0 0.75rem; /* ← arriba y costados chico, abajo 0 */
+    
+    background: #646841;
+    border-radius: 0px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    flex: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;  /* ← agregá esto */
+}
+
+.card-comunidad {
+    background: #0b264b;
+     padding: 0 !important;
+     width: 150px;
+}
+
+.card1:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+}
+
+.card1 h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f8f6f6;
+    margin-bottom: 0.75rem;
+    text-transform: capitalize;
+}
+
+.card1 p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #fffbfb;
+}
+
+/* ===== CARD NUEVA ===== */
+.contenedor-nuevas {
+    display: flex;
+    justify-content: flex-start;  /* ← alinea a la izquierda */
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 1.5rem auto;
+    padding: 0 1.5rem;
+}
+
+.card-nueva {
+    max-width: 250px;
+    flex: 1;
+    background: #1a1a1a;
+    color: #fff;
+    margin: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+    /* NAVEGACIÓN */
+    .navegacion {
+        display: none;
+    }
+
+    .hamburguesa {
+        display: flex;
+    }
+
+    .ocultar {
+        display: none;
+    }
+
+    /* HERO */
+    .contenedor-encabezado {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texto-encabezado h2 {
+        font-size: 2.2rem;
+    }
+
+    /* CHAT */
+    .chat-box {
+        padding: 0 0.75rem;
+    }
+
+    .chat-input {
+        flex-direction: column;  /* ← inputs uno abajo del otro */
+    }
+
+    #inputNombre {
+        max-width: 100%;  /* ← ocupa todo el ancho */
+    }
+
+    /* GRID PRINCIPAL */
+    .contenedor-cards {
+        grid-template-columns: 1fr;  /* ← 1 columna en celular */
+    }
+
+    /* GRID DE 2fr 1fr */
+    div[style*="grid-template-columns: 2fr 1fr"] {
+        grid-template-columns: 1fr !important;  /* ← todo en 1 columna */
+    }
+
+    /* CARDS DERECHA */
+    .cards-derecha {
+        flex-direction: column;
+    }
+
+    .card-comunidad {
+        width: 100% !important;
+    }
+
+    /* CARDS NUEVAS */
+    .contenedor-nuevas {
+        flex-direction: column;  /* ← una abajo de la otra */
+    }
+
+    .card-nueva {
+        max-width: 100%;  /* ← ocupa todo el ancho */
+    }
+
+    /* CONTAINER */
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.redes {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 1rem;
+    overflow: hidden;
+    border-radius: 8px;  /* ← opcional, redondea las esquinas del grupo */
+}
+
+.red {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 70px;
+    padding: 0;
+    border-radius: 0px;
+    transition: opacity 0.3s;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    position: relative;  /* ← agregá esto */
+}
+
+.red img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-width: 100%;  /* ← nunca se sale del contenedor */
+    display: block;   /* ← evita espacios extra */
+}
+
+.red:hover {
+    opacity: 0.85;
+}
+
+.discord    { background: #5865F2; }
+.socialclub { background: #000000; }
+.youtube    { background: #FF0000; }
+.instagram  { background: #ffffff; }
+.facebook   { background: #1877F2; }
+
+.chat-box {
+    max-width: 1200px;
+    margin: 1.5rem auto;
+    padding: 0 1.5rem;
+}
+
+.mensajes {
+    background: #1a1a1a;
+    border-radius: 12px 12px 0 0;
+    padding: 1rem;
+    min-height: 150px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mensaje-nombre {
+    font-weight: 700;
+    color: #a2df15;
+    margin-bottom: 3px;
+    font-size: 0.85rem;
+}
+
+.mensaje-fecha {
+    font-size: 0.75rem;
+    color: #888;
+    margin-left: 10px;
+}
+
+.mensaje-texto {
+    font-size: 0.9rem;
+    color: #fff;
+    flex: 1;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background: #3a3a3a;
+    color: #fff;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+#inputNombre {
+    max-width: 150px;  /* ← el campo nombre más chico */
+    flex: none;
+}
+
+.mensaje {
+    background: #2a2a2a;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.mensaje button {
+    background: #e63946;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 3px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.mensaje button:hover {
+    background: #c1121f;
+}
+
+.chat-input {
+    display: flex;
+    gap: 0.5rem;
+    background: #2a2a2a;
+    padding: 0.75rem;
+    border-radius: 0 0 12px 12px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background: #3a3a3a;
+    color: #fff;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.chat-input button {
+    background: #5865F2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.chat-input button:hover {
+    background: #4752c4;
+}
+

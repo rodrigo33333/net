@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ristorante Italiano</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/stil.css" />
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="encabezado">
+        <div class="contenedor-navegacion">
+            <div class="contenido-navegacion contenedor">
+                <div class="logo">
+                    <h2>
+                        PY <span class="rojo">Par</span><span>ag</span><span class="azul">uay</span>
+                    </h2>
+                </div>
+                <nav class="navegacion ocultar">
+                    <a href="#">Inicio</a>
+                    <a href="#">Sobre Nosotros</a>
+                    <a href="#">Menu</a>
+                    <a href="#">Chef</a>
+                    <a href="#">Contacto</a>
+                </nav>
+                <div class="hamburguesa"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+
+        <div class="contenido-header">
+            <div class="contenedor-encabezado"> <!-- CORREGIDO: doble "d" eliminada -->
+                <div class="texto-encabezado">
+                    <div class="titulo">
+                        <h2>GtaV!</h2>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="chat-box">
+        <div class="mensajes" id="mensajes"></div>
+        <div class="chat-input">
+            <input type="text" id="inputNombre" placeholder="Tu nombre..." maxlength="20"/>
+            <input type="text" id="inputMensaje" placeholder="Escribí tu mensaje..." maxlength="100" />
+            <button onclick="enviarMensaje()">Enviar</button>
+        </div>
+    </div>
+
+    <div
+        style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem;">
+
+
+        <!-- ===== SECCIÓN CARDS ===== -->
+        <div class="contenedor-cards" style="margin: 0; padding: 0;"> <!-- Apertura única del contenedor -->
+
+
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-header">
+                    <img src="imagenes/d.jpg" alt="imagen" class="card-img" />
+                    <h3 class="card-title">Otro título de la manera</h3> <!-- CORREGIDO: "menera" → "manera" -->
+                </div>
+                <div class="card-content">
+                    <p>
+                        Este es el contenido de la card que va debajo del título. Lorem ipsum
+                        dolor sit amet consectetur adipisicing elit. Molestiae maiores id
+                        quibusdam esse, veritatis a commodi officiis enim eius est quaerat
+                        ipsum eos vitae nemo necessitatibus tenetur assumenda inventore
+                        deserunt! Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Facilis nobis vitae commodi deleniti itaque consequatur
+                        nostrum eius repellendus est in? Reiciendis consequatur laborum,
+                        dolores adipisci praesentium sapiente optio in libero!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-header">
+                    <img src="imagenes/d.jpg" alt="imagen" class="card-img" />
+                    <h3 class="card-title">Mi título de la manera</h3> <!-- CORREGIDO: "menera" → "manera" -->
+                </div>
+                <div class="card-content">
+                    <p>
+                        Este es el contenido de la card que va debajo del título. Lorem
+                        ipsum dolor sit amet consectetur adipisicing elit. Quisquam quae
+                        debitis, maxime exercitationem accusamus pariatur veniam, recusandae
+                        itaque cumque aliquid suscipit, temporibus odio hic atque cum.
+                        Praesentium natus odit sit. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Voluptatem maiores rem corporis tenetur ipsam
+                        eaque numquam odit omnis, dicta modi adipisci? Deleniti autem iste
+                        suscipit iusto tenetur, ullam amet eum.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-header">
+                    <img src="imagenes/d.jpg" alt="imagen" class="card-img" />
+                    <h3 class="card-title">Otro título de la manera</h3>
+                </div>
+                <div class="card-content">
+                    <p>
+                        Este es el contenido de la card que va debajo del título. Lorem ipsum
+                        dolor sit amet consectetur adipisicing elit. Molestiae maiores id
+                        quibusdam esse, veritatis a commodi officiis enim eius est quaerat
+                        ipsum eos vitae nemo necessitatibus tenetur assumenda inventore
+                        deserunt! Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Facilis nobis vitae commodi deleniti itaque consequatur
+                        nostrum eius repellendus est in?
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-header">
+                    <img src="imagenes/d.jpg" alt="imagen" class="card-img" />
+                    <h3 class="card-title">Mi título de la manera</h3>
+                </div>
+                <div class="card-content">
+                    <p>
+                        Este es el contenido de la card que va debajo del título. Lorem
+                        ipsum dolor sit amet consectetur adipisicing elit. Quisquam quae
+                        debitis, maxime exercitationem accusamus pariatur veniam, recusandae
+                        itaque cumque aliquid suscipit, temporibus odio hic atque cum.
+                        Praesentium natus odit sit. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Voluptatem maiores rem corporis tenetur ipsam
+                        eaque numquam odit omnis, dicta modi adipisci?
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card-header">
+                    <img src="imagenes/d.jpg" alt="imagen" class="card-img" />
+                    <h3 class="card-title">Otro título de la manera</h3>
+                </div>
+                <div class="card-content">
+                    <p>
+                        Este es el contenido de la card que va debajo del título. Lorem ipsum
+                        dolor sit amet consectetur adipisicing elit. Molestiae maiores id
+                        quibusdam esse, veritatis a commodi officiis enim eius est quaerat
+                        ipsum eos vitae nemo necessitatibus tenetur assumenda inventore
+                        deserunt!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="card-header">
+                    <img src="imagenes/d.jpg" alt="imagen" class="card-img" />
+                    <h3 class="card-title">Mi título de la manera</h3>
+                </div>
+                <div class="card-content">
+                    <p>
+                        Este es el contenido de la card que va debajo del título. Lorem
+                        ipsum dolor sit amet consectetur adipisicing elit. Nobis sunt facilis
+                        vel odit atque. Quos accusantium ipsum error expedita ad, repellat at
+                        deserunt laudantium earum assumenda enim facilis molestiae atque.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- FIN .contenedor-cards -->
+
+        <!-- ===== SECCIÓN CARDS DERECHA ===== -->
+        <div class="container" style="margin: 0; padding: 0;"> <!-- Abierto y cerrado correctamente -->
+            <div class="cards-derecha">
+                <div class="card1">
+                    <h3>Bienvenida</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
+                        voluptatibus dolor? Quas libero, nulla nesciunt sapiente atque
+                        inventore dolorem nemo rerum aspernatur quasi explicabo quam
+                        animi, veniam odio nam molestias.
+                    </p>
+                </div>
+                <div class="card1">Card 2</div>
+
+
+                <div class="card1 card-comunidad" style="padding: 1rem 1rem 0 1rem;">
+                    <h3>Comunidad</h3>
+                    <div class="redes">
+                        <a href="#" class="red discord">
+                            <img src="imagenes/discord.webp" alt="Social Club" />
+
+                        </a>
+                        <a href="#" class="red socialclub">
+                            <img src="imagenes/rockstar.webp" alt="Social Club" />
+
+                        </a>
+                        <a href="#" class="red youtube">
+                            <img src="imagenes/images.jfif" alt="Social Club" />
+                        </a>
+                        <a href="#" class="red instagram">
+                            <img src="imagenes/images (1).jfif" alt="Social Club" />
+                        </a>
+                        <a href="#" class="red facebook">
+                            <img src="imagenes/cc.png" alt="Social Club" />
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- FIN .container -->
+    </div>
+
+
+
+    <!-- NUEVA CARD ABAJO SEPARADA -->
+    <div class="contenedor-nuevas">
+        <div class="card1 card-nueva">
+            <h3>Título nueva card</h3>
+            <p>Contenido de la nueva card</p>
+        </div>
+        <div class="card1 card-nueva">
+            <h3>Título nueva card</h3>
+            <p>Contenido de la nueva card</p>
+        </div>
+    </div>
+
+
+<script>
+// Cargar mensajes guardados al abrir la página
+window.onload = function() {
+    const guardados = JSON.parse(localStorage.getItem('mensajes')) || [];
+    guardados.forEach(msg => mostrarMensaje(msg.nombre, msg.texto, msg.fecha, msg.hora, false));
+}
+
+function enviarMensaje() {
+    const inputNombre = document.getElementById('inputNombre');
+    const inputMensaje = document.getElementById('inputMensaje');
+    const nombre = inputNombre.value.trim();
+    const texto = inputMensaje.value.trim();
+
+    if (nombre === '') { alert('Escribí tu nombre primero'); return; }
+    if (texto === '') { alert('Escribí un mensaje'); return; }
+
+    const ahora = new Date();
+    const fecha = ahora.toLocaleDateString('es-PY');
+    const hora = ahora.toLocaleTimeString('es-PY', { hour: '2-digit', minute: '2-digit' });
+
+    // Guardar en localStorage
+    const guardados = JSON.parse(localStorage.getItem('mensajes')) || [];
+    guardados.push({ nombre, texto, fecha, hora });
+    localStorage.setItem('mensajes', JSON.stringify(guardados));
+
+    mostrarMensaje(nombre, texto, fecha, hora, true);
+    inputMensaje.value = '';
+}
+
+function mostrarMensaje(nombre, texto, fecha, hora, scroll) {
+    const mensajes = document.getElementById('mensajes');
+    const div = document.createElement('div');
+    div.classList.add('mensaje');
+    div.dataset.nombre = nombre;
+    div.dataset.texto = texto;
+    div.dataset.fecha = fecha;
+    div.dataset.hora = hora;
+    div.innerHTML = `
+        <div style="flex:1;">
+            <div class="mensaje-nombre">${nombre} <span class="mensaje-fecha">${fecha} ${hora}</span></div>
+            <div class="mensaje-texto">${texto}</div>
+        </div>
+        <button onclick="borrarMensaje(this)">Borrar</button>
+    `;
+    mensajes.appendChild(div);
+    if (scroll) mensajes.scrollTop = mensajes.scrollHeight;
+}
+
+function borrarMensaje(btn) {
+    const div = btn.parentElement;
+    const nombre = div.dataset.nombre;
+    const texto = div.dataset.texto;
+    const fecha = div.dataset.fecha;
+    const hora = div.dataset.hora;
+
+    // Borrar del localStorage
+    let guardados = JSON.parse(localStorage.getItem('mensajes')) || [];
+    guardados = guardados.filter(m => 
+        !(m.nombre === nombre && m.texto === texto && m.fecha === fecha && m.hora === hora)
+    );
+    localStorage.setItem('mensajes', JSON.stringify(guardados));
+
+    div.remove();
+}
+
+document.getElementById('inputMensaje').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') enviarMensaje();
+});
+</script>
+</body>
+
+</html>
