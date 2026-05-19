@@ -6,71 +6,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>страница</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
-        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Changa+One:ital@0;1&family=Diplomata&family=Jersey+10+Charted&family=Poller+One&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/stil.css" />
 </head>
 
 <body>
 
+
     <!-- ===== HEADER ===== -->
     <header class="encabezado">
         <div class="contenedor-navegacion">
             <div class="contenido-navegacion contenedor">
                 <div class="logo">
-                    <h2>
-                        PY <span class="rojo">Par</span><span>ag</span><span class="azul">uay</span>
-                    </h2>
+                    <img src="imagenes/gta-grand-theft-auto.svg" alt="Logo" />
                 </div>
                 <nav class="navegacion ocultar">
-                    <a href="#">Inicio</a>
-                    <a href="#">Sobre Nosotros</a>
-                    <a href="#">Menu</a>
-                    <a href="#">Chef</a>
-                    <a href="#">Contacto</a>
+                    <a href="#" class="activo">Inicio</a>
+                    <a href="#">Foro</a>
+                    <a href="#">Únete</a>
+                    <a href="#">Reglas</a>
+                    <a href="#">Misiones</a>
+                    <a href="#">Ayuda</a>
+                    <a href="#">Buscar</a>
                 </nav>
                 <div class="hamburguesa"><span></span><span></span><span></span></div>
             </div>
         </div>
 
-        <div class="contenido-header">
-            <div class="contenedor-encabezado"> <!-- CORREGIDO: doble "d" eliminada -->
-                <div class="texto-encabezado">
-                    <div class="titulo">
-                        <h2>GtaV!</h2>
-                    </div>
+        <section class="hero-section">
 
-                </div>
+            <!-- fondo y letra decorativa van aquí -->
 
+            <!-- IMAGEN DE PERSONAJES -->
+            <img class="personaje-hero" src="imagenes/pngegg (2).png" alt="Personajes GTA" />
+
+            <!-- CONTENIDO IZQUIERDA -->
+            <div class="hero-content">
+                <p class="hero-eyebrow">Comunidad oficial</p>
+                <h1 class="hero-title">Grand<br>Theft<br>Auto</h1>
+                <p class="hero-subtitle">Los Santos Community</p>
+                <p class="hero-desc">
+                    Únite a la comunidad más grande de GTA. Foros, misiones, eventos y mucho más te esperan.
+                </p>
+                <a href="#" class="hero-cta">▶ Unirse Ahora</a>
             </div>
-        </div>
+
+        </section>
     </header>
 
     <div class="chat-box">
         <div class="mensajes" id="mensajes"></div>
         <div class="chat-input">
-            <input type="text" id="inputNombre" placeholder="Tu nombre..." maxlength="20"/>
+            <input type="text" id="inputNombre" placeholder="Tu nombre..." maxlength="20" />
             <input type="text" id="inputMensaje" placeholder="Escribí tu mensaje..." maxlength="100" />
+            <input type="file" id="inputAvatar" accept="image/*" />
             <button onclick="enviarMensaje()">Enviar</button>
         </div>
     </div>
 
-    <div
-        style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem;">
+
+    <div class="grid-principal">
 
 
         <!-- ===== SECCIÓN CARDS ===== -->
         <div class="contenedor-cards" style="margin: 0; padding: 0;"> <!-- Apertura única del contenedor -->
 
-
             <!-- Card 1 -->
-            <div class="card">
+            <div class="card card-bienvenida">
                 <div class="card-header">
-                    <img src="imagenes/d.jpg" alt="imagen" class="card-img" />
-                    <h3 class="card-title">Otro título de la manera</h3> <!-- CORREGIDO: "menera" → "manera" -->
+                    <img src="imagenes/pngwing.com (3).png" alt="imagen" class="card-img" />
+                    <div>
+                        <p class="pre-titulo">bienvoenid a </p>
+                        <h3 class="card-title titulo-bienvenida">GTA V PY</h3>
+                    </div>
                 </div>
                 <div class="card-content">
                     <p>
@@ -78,19 +93,18 @@
                         dolor sit amet consectetur adipisicing elit. Molestiae maiores id
                         quibusdam esse, veritatis a commodi officiis enim eius est quaerat
                         ipsum eos vitae nemo necessitatibus tenetur assumenda inventore
-                        deserunt! Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Facilis nobis vitae commodi deleniti itaque consequatur
-                        nostrum eius repellendus est in? Reiciendis consequatur laborum,
-                        dolores adipisci praesentium sapiente optio in libero!
+                        deserunt!
                     </p>
                 </div>
             </div>
-
             <!-- Card 2 -->
-            <div class="card">
+            <div class="card card-bienvenida">
                 <div class="card-header">
-                    <img src="imagenes/d.jpg" alt="imagen" class="card-img" />
-                    <h3 class="card-title">Mi título de la manera</h3> <!-- CORREGIDO: "menera" → "manera" -->
+                    <img src="imagenes/pngwing.com (3).png" alt="imagen" class="card-img" />
+                    <div>
+                        <p class="pre-titulo">bienvoenid a </p>
+                        <h3 class="card-title">Mi título de la manera</h3> <!-- CORREGIDO: "menera" → "manera" -->
+                    </div>
                 </div>
                 <div class="card-content">
                     <p>
@@ -109,7 +123,7 @@
             <!-- Card 3 -->
             <div class="card">
                 <div class="card-header">
-                    <img src="imagenes/d.jpg" alt="imagen" class="card-img" />
+                    <img src="imagenes/pngwing.com (3).png" alt="imagen" class="card-img" />
                     <h3 class="card-title">Otro título de la manera</h3>
                 </div>
                 <div class="card-content">
@@ -128,7 +142,7 @@
             <!-- Card 4 -->
             <div class="card">
                 <div class="card-header">
-                    <img src="imagenes/d.jpg" alt="imagen" class="card-img" />
+                    <img src="imagenes/pngwing.com (3).png" alt="imagen" class="card-img" />
                     <h3 class="card-title">Mi título de la manera</h3>
                 </div>
                 <div class="card-content">
@@ -147,7 +161,7 @@
             <!-- Card 5 -->
             <div class="card">
                 <div class="card-header">
-                    <img src="imagenes/d.jpg" alt="imagen" class="card-img" />
+                    <img src="imagenes/gta-grand-theft-auto.svg" alt="imagen" class="card-img" />
                     <h3 class="card-title">Otro título de la manera</h3>
                 </div>
                 <div class="card-content">
@@ -164,7 +178,7 @@
             <!-- Card 6 -->
             <div class="card">
                 <div class="card-header">
-                    <img src="imagenes/d.jpg" alt="imagen" class="card-img" />
+                    <img src="imagenes/playstaion-1.svg" alt="imagen" class="card-img" />
                     <h3 class="card-title">Mi título de la manera</h3>
                 </div>
                 <div class="card-content">
@@ -181,7 +195,7 @@
         <!-- FIN .contenedor-cards -->
 
         <!-- ===== SECCIÓN CARDS DERECHA ===== -->
-        <div class="container" style="margin: 0; padding: 0;"> <!-- Abierto y cerrado correctamente -->
+        <div class="container" style="margin: 0; padding: 0;">
             <div class="cards-derecha">
                 <div class="card1">
                     <h3>Bienvenida</h3>
@@ -192,10 +206,15 @@
                         animi, veniam odio nam molestias.
                     </p>
                 </div>
-                <div class="card1">Card 2</div>
+                <div class="card1">
+                    <h3> BIENVENIDO</h3>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam id accusantium adipisci hic qui
+                    aliquid saepe, eius vitae ducimus necessitatibus cum molestias accusamus error sit reiciendis neque
+                    illo. Non, possimus.
+                </div>
 
 
-                <div class="card1 card-comunidad" style="padding: 1rem 1rem 0 1rem;">
+                <div class="card1 card-comunidad">
                     <h3>Comunidad</h3>
                     <div class="redes">
                         <a href="#" class="red discord">
@@ -206,14 +225,17 @@
                             <img src="imagenes/rockstar.webp" alt="Social Club" />
 
                         </a>
-                        <a href="#" class="red youtube">
-                            <img src="imagenes/images.webp" alt="Social Club" />
-                        </a>
                         <a href="#" class="red instagram">
-                            <img src="imagenes/images1.webp" alt="Social Club" />
+                            <img src="imagenes/55.svg" alt="Instagram" />
                         </a>
                         <a href="#" class="red facebook">
-                            <img src="imagenes/descarga1.webp" alt="Social Club" />
+                            <img src="imagenes/discord.webp" alt="Facebook" />
+                        </a>
+                        <a href="#" class="red facebook">
+                            <img src="imagenes/discord.webp" alt="Facebook" />
+                        </a>
+                        <a href="#" class="red facebook">
+                            <img src="imagenes/discord.webp" alt="Facebook" />
                         </a>
                     </div>
                 </div>
@@ -226,87 +248,137 @@
 
 
     <!-- NUEVA CARD ABAJO SEPARADA -->
-    <div class="contenedor-nuevas">
-        <div class="card1 card-nueva">
-            <h3>Título nueva card</h3>
-            <p>Contenido de la nueva card</p>
-        </div>
-        <div class="card1 card-nueva">
-            <h3>Título nueva card</h3>
-            <p>Contenido de la nueva card</p>
+    <div class="grid-principal">
+
+        <div class="contenedor-nuevas">
+            <div class="card card-nueva">
+                <h3>Título Nueva Card</h3>
+                <p>Contenido de la nueva card</p>
+                <!-- LOGOS -->
+                <div class="logos-enlaces">
+                    <a href="#">
+                        <img src="imagenes/gta-grand-theft-auto.svg" alt="Discord" />
+                        <p>hola muchacho como estan</p>
+                    </a>
+                    <a href="#">
+                        <img src="imagenes/bmw-7.svg" alt="Rockstar" />
+                        <p>hola muchacho como estan</p>
+                    </a>
+                    <a href="#">
+                        <img src="imagenes/images.webp" alt="YouTube" />
+                        <p>hola muchacho como estan</p>
+                    </a>
+                </div>
+            </div>
+            <div class="card card-nueva">
+                <h3>Título Nueva Card</h3>
+                <p>Contenido de la nueva card
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis excepturi accusantium sint odit
+                    rem odio blanditiis iste necessitatibus, a earum deleniti, numquam inventore perferendis! Labore
+                    amet minima distinctio aut explicabo?
+                </p>
+            </div>
         </div>
     </div>
 
-
-<script>
-// Cargar mensajes guardados al abrir la página
-window.onload = function() {
-    const guardados = JSON.parse(localStorage.getItem('mensajes')) || [];
-    guardados.forEach(msg => mostrarMensaje(msg.nombre, msg.texto, msg.fecha, msg.hora, false));
-}
-
-function enviarMensaje() {
-    const inputNombre = document.getElementById('inputNombre');
-    const inputMensaje = document.getElementById('inputMensaje');
-    const nombre = inputNombre.value.trim();
-    const texto = inputMensaje.value.trim();
-
-    if (nombre === '') { alert('Escribí tu nombre primero'); return; }
-    if (texto === '') { alert('Escribí un mensaje'); return; }
-
-    const ahora = new Date();
-    const fecha = ahora.toLocaleDateString('es-PY');
-    const hora = ahora.toLocaleTimeString('es-PY', { hour: '2-digit', minute: '2-digit' });
-
-    // Guardar en localStorage
-    const guardados = JSON.parse(localStorage.getItem('mensajes')) || [];
-    guardados.push({ nombre, texto, fecha, hora });
-    localStorage.setItem('mensajes', JSON.stringify(guardados));
-
-    mostrarMensaje(nombre, texto, fecha, hora, true);
-    inputMensaje.value = '';
-}
-
-function mostrarMensaje(nombre, texto, fecha, hora, scroll) {
-    const mensajes = document.getElementById('mensajes');
-    const div = document.createElement('div');
-    div.classList.add('mensaje');
-    div.dataset.nombre = nombre;
-    div.dataset.texto = texto;
-    div.dataset.fecha = fecha;
-    div.dataset.hora = hora;
-    div.innerHTML = `
-        <div style="flex:1;">
-            <div class="mensaje-nombre">${nombre} <span class="mensaje-fecha">${fecha} ${hora}</span></div>
-            <div class="mensaje-texto">${texto}</div>
+    <!-- SECCIÓN TABS -->
+    <div class="tabs-seccion">
+        <div class="tabs-barra">
+            <button class="tab-btn activo" onclick="cambiarTab('misiones')">
+                Misiones
+            </button>
+            <button class="tab-btn" onclick="cambiarTab('vehiculos')">
+                Vehículos
+            </button>
+            <button class="tab-btn" onclick="cambiarTab('armas')">
+                Armas
+            </button>
+            <button class="tab-btn" onclick="cambiarTab('eventos')">
+                Eventos
+            </button>
         </div>
-        <button onclick="borrarMensaje(this)">Borrar</button>
-    `;
-    mensajes.appendChild(div);
-    if (scroll) mensajes.scrollTop = mensajes.scrollHeight;
-}
 
-function borrarMensaje(btn) {
-    const div = btn.parentElement;
-    const nombre = div.dataset.nombre;
-    const texto = div.dataset.texto;
-    const fecha = div.dataset.fecha;
-    const hora = div.dataset.hora;
+        <div id="tab-misiones" class="tab-contenido activo">
+            <img src="imagenes/misiones.jpg" alt="Misiones" />
+            <h3>Misiones</h3>
+            <p>Descripción de misiones aquí.</p>
+        </div>
 
-    // Borrar del localStorage
-    let guardados = JSON.parse(localStorage.getItem('mensajes')) || [];
-    guardados = guardados.filter(m => 
-        !(m.nombre === nombre && m.texto === texto && m.fecha === fecha && m.hora === hora)
-    );
-    localStorage.setItem('mensajes', JSON.stringify(guardados));
+        <div id="tab-vehiculos" class="tab-contenido">
+            <img src="imagenes/pngwing.com (2).png" alt="Vehículos" />
+            <img src="imagenes/pngwing.com (2).png" alt="Vehículos" />
+            <div class="tab-texto">
 
-    div.remove();
-}
+            </div>
+        </div>
 
-document.getElementById('inputMensaje').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') enviarMensaje();
-});
-</script>
+        <div id="tab-armas" class="tab-contenido">
+            <img src="imagenes/armas.jpg" alt="Armas" />
+            <h3>Armas</h3>
+            <p>Descripción de armas aquí.</p>
+        </div>
+
+        <div id="tab-eventos" class="tab-contenido">
+            <img src="imagenes/eventos.jpg" alt="Eventos" />
+            <h3>Eventos</h3>
+            <p>Descripción de eventos aquí.</p>
+        </div>
+    </div>
+    <!-- NUEVA CARD ABAJO SEPARADA -->
+    <div class="contenedor-principal">
+
+        <div class="contenedor-nuevas">
+            <div class="card card-nueva">
+                <h3>Título Nueva Card</h3>
+                <p>Contenido de la nueva card
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis optio et quod! Autem est perspiciatis
+                    nobis ipsam, alias nisi, quibusdam magnam ea aperiam mollitia provident numquam accusamus temporibus
+                    maxime dolor!
+                </p>
+            </div>
+            <div class="card card-nueva">
+                <h3>Título Nueva Card</h3>
+                <p>Contenido de la nueva card
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, impedit adipisci modi sint
+                    libero repellat quibusdam aut repudiandae cum necessitatibus. Dignissimos nesciunt omnis voluptate
+                    vitae libero temporibus blanditiis tempora ea!
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae obcaecati repellat explicabo,
+                    iure adipisci reiciendis ipsum corporis? Dignissimos molestiae repellat culpa alias tenetur. Nobis
+                    facilis sapiente, velit ipsum fuga veniam?
+                </p>
+            </div>
+            <div class="card card-nueva">
+                <h3>bienvenida</h3>
+                <p>
+                    Este es el contenido de la card que va debajo del título. Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Quisquam quae
+                    debitis, maxime exercitationem accusamus pariatur veniam, recusandae
+                    itaque cumque aliquid suscipit, temporibus odio hic atque cum.
+                    Praesentium natus odit sit. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Voluptatem maiores rem corporis tenetur ipsam
+                    eaque numquam odit omnis, dicta modi adipisci? Deleniti autem iste
+                    suscipit iusto tenetur, ullam amet eum.
+                </p>
+            </div>
+            <div class="card card-nueva">
+                <h3>Bienvenido</h3>
+                <p>
+                    Este es el contenido de la card que va debajo del título. Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Quisquam quae
+                    debitis, maxime exercitationem accusamus pariatur veniam, recusandae
+                    itaque cumque aliquid suscipit, temporibus odio hic atque cum.
+                    Praesentium natus odit sit. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Voluptatem maiores rem corporis tenetur ipsam
+                    eaque numquam odit omnis, dicta modi adipisci? Deleniti autem iste
+                    suscipit iusto tenetur, ullam amet eum.
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <!-- Borrar todo lo que estaba debajo de acá -->
+
+    <script src="app.js"></script>
 </body>
 
 </html>
