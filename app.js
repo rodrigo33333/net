@@ -96,59 +96,46 @@ function cambiarTab(nombre) {
     event.target.classList.add('activo');
 }
 
-const emojis = ['😂', '👀', '🔥', '💀', '😤', '🤙', '👊', '😎'];
-let emojiIdx = 0;
+// ── FIB CHAT ──
+function fibGetTime() {
+  const n = new Date();
+  return String(n.getHours()).padStart(2,'0') + ':' + String(n.getMinutes()).padStart(2,'0');
+}
 
-function addEmoji() {
-  const input = document.getElementById('msgInput');
-  input.value += emojis[emojiIdx++ % emojis.length];
+function fibEscape(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function fibSend() {
+  const input    = document.getElementById('fibInput');
+  const nameInp  = document.getElementById('fibNombre');
+  const text     = input.value.trim();
+  const nombre   = nameInp.value.trim().toUpperCase() || 'AGENTE';
+  const iniciales = nombre.slice(0, 2);
+  if (!text) return;
+
+  const msgs = document.getElementById('fibMessages');
+  const sys  = msgs.querySelector('.fib-sys:last-child');
+
+  const row = document.createElement('div');
+  row.className = 'fib-row own';
+  row.innerHTML = `
+    <div class="fib-av own" data-initials="${iniciales}"></div>
+    <div class="fib-msg-content own">
+      <div class="fib-msg-meta own">
+        <span class="fib-rank">ACTIVO</span>
+        <span class="fib-time">${fibGetTime()}</span>
+        <span class="fib-username own">${fibEscape(nombre)}</span>
+      </div>
+      <div class="fib-bubble own">${fibEscape(text)}</div>
+    </div>`;
+
+  msgs.insertBefore(row, sys);
+  msgs.scrollTop = msgs.scrollHeight;
+  input.value = '';
   input.focus();
 }
 
-function toggleLike(btn) {
-  const isLiked = btn.classList.toggle('liked');
-  btn.textContent = isLiked ? '♥ 1' : '♡ 0';
-}
-
-function escapeHTML(str) {
-  return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
-}
-
-function sendMessage() {
-  const input = document.getElementById('msgInput');
-  const text = input.value.trim();
-  if (!text) return;
-
-  const now = new Date();
-  const time =
-    now.getHours().toString().padStart(2, '0') + ':' +
-    now.getMinutes().toString().padStart(2, '0');
-
-  const row = document.createElement('div');
-  row.className = 'msg-row own';
-  row.innerHTML = `
-    <div class="avatar r">R</div>
-    <div class="msg-content">
-      <div class="msg-meta">
-        <span>${time}</span>
-        <span class="msg-username">rodrigo</span>
-      </div>
-      <div class="bubble">${escapeHTML(text)}</div>
-      <div class="msg-actions">
-        <button class="action-btn" onclick="toggleLike(this)">♡ 0</button>
-        <button class="action-btn danger" onclick="this.closest('.msg-row').remove()">🗑 Borrar</button>
-      </div>
-    </div>`;
-
-  const messages = document.getElementById('messages');
-  messages.appendChild(row);
-  messages.scrollTop = messages.scrollHeight;
-  input.value = '';
-}
-
-document.getElementById('msgInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter') sendMessage();
+document.getElementById('fibInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') fibSend();
 });

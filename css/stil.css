@@ -12,6 +12,9 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+
+    
+    
 }
 
 h1,
@@ -24,7 +27,7 @@ h3 {
 
 /* NAV */
 .contenedor-navegacion {
-    background-color: #683877;
+    background-color: #dad6db;
     padding: 0;
     position: sticky;
     top: 0;
@@ -49,14 +52,14 @@ h3 {
 .navegacion {
     display: flex;
     gap: 0;
-    background-color: #3a1f5c;
+    background-color: #3c260b;
 }
 
 .navegacion a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     padding: 0.7rem 1.2rem;
     transition: background 0.2s;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -64,7 +67,7 @@ h3 {
 
 .navegacion a:hover,
 .navegacion a.activo {
-    background-color: #5a2d8c;
+    background-color: #000000;
 }
 
 .hamburguesa {
@@ -754,7 +757,7 @@ h3 {
     position: absolute;
     bottom: 0;
     right: 0;               /* derecha en vez de centro */
-    left: auto;             /* cancela cualquier left anterior */
+    left: 50%;             /* cancela cualquier left anterior */
     transform: none;        /* sin translateX */
     height: 95%;
     object-fit: contain;
