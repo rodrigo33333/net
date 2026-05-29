@@ -8,10 +8,17 @@
 
 body {
     font-family: 'Averia Sans Libre', sans-serif;
-    background: #050d19;
+    background: #000000;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+}
+
+.contenedor{
+    width: 1000px;      /* ancho fijo */
+    max-width: 100%;    /* evita romper en pantallas chicas */
+    margin: 0 auto;     /* centra */
+    background:  url('../imagenes/wallhaven-o58r9p_1600x900.png'); /* la que bajaste */;
 }
 
 h1, h2, h3 {
@@ -20,7 +27,7 @@ h1, h2, h3 {
     font-style: normal;
 }
 
-/* ===== NAV ===== */
+/*===== NAV =====*/ 
 .contenedor-navegacion {
     background-color: #dad6db;
     padding: 0;
@@ -78,6 +85,7 @@ h1, h2, h3 {
     background: #fff;
     border-radius: 3px;
 }
+
 
 /* ===== HERO ===== */
 .hero-section {
@@ -456,7 +464,7 @@ h1, h2, h3 {
 
 .card1 {
     padding: 0.75rem;
-    background: #646841;
+    background: #2e931f;
     border-radius: 0;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s;
@@ -759,4 +767,16 @@ h1, h2, h3 {
 
     .footer-contenido { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .footer-logo { grid-column: 1 / -1; }
+}
+
+@media (max-width: 768px){
+
+    .menu{
+        flex-direction: column;
+    }
+
+    .cards{
+        flex-direction: column;
+    }
+
 }

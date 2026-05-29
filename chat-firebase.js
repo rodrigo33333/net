@@ -109,3 +109,29 @@ function escapeHTML(str) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 }
+
+// hero.js — Lógica del hero
+// Animación de contadores al cargar la página
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Anima cada número desde 0 hasta su valor real
+  const counters = document.querySelectorAll('.hero-stat-num[data-target]');
+
+  counters.forEach(counter => {
+    const target = parseInt(counter.dataset.target, 10);
+    const duration = 1600; // ms
+    const steps = 60;
+    const increment = target / steps;
+    let current = 0;
+    let step = 0;
+
+    const timer = setInterval(() => {
+      step++;
+      current = Math.min(Math.round(increment * step), target);
+      counter.textContent = current.toLocaleString('es-PY');
+      if (current >= target) clearInterval(timer);
+    }, duration / steps);
+  });
+
+});
