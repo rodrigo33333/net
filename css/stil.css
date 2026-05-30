@@ -145,7 +145,7 @@ h1, h2, h3 {
 .personaje-hero {
     position: absolute;
     bottom: 0;
-    left: 40%;
+    left: 50%;
     right: auto;
     transform: none;
     height: 95%;
