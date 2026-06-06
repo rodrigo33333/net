@@ -52,7 +52,7 @@ function filtrar(dif, btn) {
 }
 
 // ===== NAVEGACIÓN SIN RECARGAR =====
-const secciones = ['inicio', 'reglas', 'misiones', 'capturas', 'foro', 'unete', 'ayuda', 'buscar'];
+const secciones = ['inicio', 'reglassss', 'misiones', 'capturas', 'foro', 'unete', 'ayuda', 'buscar'];
 
 function mostrar(seccion, link) {
   secciones.forEach(s => {
@@ -115,3 +115,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// 1. Agregá data-text al elemento HTML
+
+// 2. CSS
+
+const slides = document.querySelectorAll('.slide');
+let actual = 0;
+
+setInterval(() => {
+  slides[actual].classList.remove('active');
+  actual = (actual + 1) % slides.length;
+  slides[actual].classList.add('active');
+}, 20000);
+
+
+
+// JS
+function slideEntrada() {
+  const el = document.querySelector('.slide-texto');
+  const palabras = el.textContent.split(' ');
+
+  el.innerHTML = palabras
+    .map(p => `<span class="palabra">${p}&nbsp;</span>`)
+    .join('');
+
+  el.querySelectorAll('.palabra').forEach((palabra, i) => {
+    setTimeout(() => {
+      palabra.style.opacity = 1;
+      palabra.style.transform = 'translateX(0)';
+    }, i * 180);
+  });
+}
+
+slideEntrada();

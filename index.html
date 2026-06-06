@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Changa+One:ital@0;1&family=Prosto+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/stil.css" />
     <link rel="stylesheet" href="css/retro-amber.css" />
@@ -18,297 +20,327 @@
 
     <div class="contenedor">
 
-    <!-- ===== HEADER ===== -->
-    <header class="encabezado">
-        <div class="contenedor-navegacion">
-            <div class="contenido-navegacion contenedor">
-                <div class="logo">
+        <!-- ===== HEADER ===== -->
+        <header class="encabezado">
+            <div class="contenedor-navegacion">
+                <div class="contenido-navegacion contenedor">
+                    <div class="logo">
+                        <img src="imagenes/gta-grand-theft-auto.svg" alt="Logo GTA" />
+                    </div>
+                    <nav class="navegacion ocultar">
+                        <a href="#" class="activo" onclick="mostrar('inicio', this)">Inicio</a>
+                        <a href="#" onclick="mostrar('foro', this)">Foro</a>
+                        <a href="#" onclick="mostrar('unete', this)">Únete</a>
+                        <a href="#" onclick="mostrar('reglas', this)">Reglas</a>
+                        <a href="#" onclick="mostrar('misiones', this)">Misiones</a>
+                        <a href="#" onclick="mostrar('ayuda', this)">Ayuda</a>
+                        <a href="#" onclick="mostrar('buscar', this)">Buscar</a>
+                    </nav>
+                    <div class="hamburguesa"><span></span><span></span><span></span></div>
+                </div>
+            </div>
+
+            <section class="hero-section">
+                <!-- IZQUIERDA: texto -->
+                <div class="hero-content">
+                    <div class="live-badge">
+                        <span class="live-dot"></span>
+                        Comunidad activa
+                    </div>
+                    <h1 class="slide-texto">Bienvenido a Los Santos</h1>
+                    <p class="hero-desc">Únite a la comunidad más grande de GTA.</p>
+                </div>
+
+                <!-- CENTRO: personaje -->
+                <img class="personaje-hero" src="imagenes/pngegg3.png" alt="Personajes GTA" />
+
+                <!-- DERECHA: slider -->
+                <div class="slider">
+                    <img class="slide active" src="imagenes/wallhaven-0q17xl_3840x2400.png" alt="">
+                    <img class="slide" src="imagenes/wallhaven-x63z13_1920x1080.png" alt="">
+                    <img class="slide" src="imagenes/img3.jpg" alt="">
+                </div>
+            </section>
+        </header>
+
+        <!-- ===== INICIO ===== -->
+        <div id="seccion-inicio">
+
+            <!-- CHAT FIREBASE -->
+            <div class="chat-box">
+                <div class="chat-header">
+                    <div class="dot"></div>
+                    <span>CHAT EN VIVO · LOS SANTOS COMMUNITY</span>
+                    <div class="online-badge" id="onlineBadge">● EN LINEA</div>
+                </div>
+                <div class="mensajes" id="mensajes">
+                    <div class="vacio" id="vacio">// cargando mensajes...</div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="inputNombre" placeholder="tu nombre..." maxlength="10" autocomplete="off" />
+                    <input type="text" id="inputMensaje" placeholder="escribir mensaje..." maxlength="70" autocomplete="off" />
+                    <button id="btnEnviar">ENVIAR</button>
+                </div>
+            </div>
+
+            <!-- GRID PRINCIPAL -->
+            <div class="grid-principal">
+
+                <!-- CARDS IZQUIERDA -->
+                <div class="contenedor-cards" style="margin:0;padding:0;">
+
+                    <div class="card card-bienvenida">
+                        <div class="card-header">
+                            <img src="imagenes/pre.jpg" alt="imagen" class="card-img1" />
+                            <div><p class="pre-titulo">bienvenid@</p></div>
+                        </div>
+                        <div class="card-content1">
+                            <p class="mision-parrafo">
+                                Esta misión requiere coordinación. Antes de entrar asegurate de leer las
+                                <a href="#" onclick="mostrar('reglas', this)" class="texto-link">reglas de la comunidad</a>.
+                                El objetivo es llegar al edificio sin ser detectado.
+                            </p>
+                            <p class="mision-parrafo">
+                                Uníte al
+                                <a href="https://discord.gg/tuservidor" target="_blank" class="texto-link">Discord</a>
+                                para coordinarte con tu equipo antes de iniciar.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card card-bienvenida">
+                        <div class="card-header">
+                            <img src="imagenes/pre.jpg" alt="imagen" class="card-img1" />
+                            <div><p class="pre-titulo">bienvenid@</p></div>
+                        </div>
+                        <div class="card-content1">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cupiditate enim inventore minima culpa distinctio explicabo unde corporis perspiciatis saepe.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header"><img src="imagenes/pre.jpg" alt="imagen" class="card-img" /></div>
+                        <div class="card-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header"><img src="imagenes/pre.jpg" alt="imagen" class="card-img" /></div>
+                        <div class="card-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header"><img src="imagenes/pre.jpg" alt="imagen" class="card-img" /></div>
+                        <div class="card-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header"><img src="imagenes/pre.jpg" alt="imagen" class="card-img" /></div>
+                        <div class="card-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR DERECHA -->
+                <div style="margin:0;padding:0;">
+
+                    <!-- CARD CAPTURAS — se llena desde Firebase -->
+                    <div class="card1 card-capturas-sidebar">
+                        <h3 class="sidebar-titulo">📸 Capturas</h3>
+                        <div class="mini-galeria" id="mini-galeria"></div>
+                        <a href="#" onclick="mostrar('capturas', null)" class="link-capturas">Ver todas las capturas →</a>
+                    </div>
+
+                    <!-- CARD COMUNIDAD -->
+                    <div class="card1 card-comunidad">
+                        <h3>Comunidad</h3>
+                        <div class="redes">
+                            <a href="#" class="red discord"><img src="imagenes/discord.webp" alt="Discord" /></a>
+                            <a href="#" class="red socialclub"><img src="imagenes/rockstar.webp" alt="Social Club" /></a>
+                            <a href="#" class="red instagram"><img src="imagenes/55.svg" alt="Instagram" /></a>
+                            <a href="#" class="red facebook"><img src="imagenes/discord.webp" alt="Facebook" /></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- VIDEOS -->
+            <div class="grid-full">
+                <div class="contenedor-nuevas">
+                    <div class="card-video">
+                        <iframe class="video-card" src="https://www.youtube.com/embed/DZtvm1ATVD4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-video">
+                        <iframe class="video-card" src="https://www.youtube.com/embed/rE47fMId0Iw" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ===== REGLAS ===== -->
+        <div id="seccion-reglas" style="display:none">
+            <div class="page-header">
+                <span class="page-eyebrow">Comunidad oficial</span>
+                <h1 class="page-title">Reglas de la <span>Comunidad</span></h1>
+                <p class="page-desc">Leé y respetá las reglas para mantener una comunidad sana.</p>
+            </div>
+            <div class="page-main">
+                <div class="rules-grid">
+                    <div class="rule-card">
+                        <div class="rule-num">01</div>
+                        <div class="rule-body">
+                            <h3>Respeto ante todo</h3>
+                            <p>No se toleran insultos, discriminación ni ataques personales.</p>
+                            <span class="rule-badge grave">Sanción grave</span>
+                        </div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-num">02</div>
+                        <div class="rule-body">
+                            <h3>No spam</h3>
+                            <p>Prohibido publicar mensajes repetidos o publicidad no autorizada.</p>
+                            <span class="rule-badge media">Sanción media</span>
+                        </div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-num">03</div>
+                        <div class="rule-body">
+                            <h3>Sin contenido inapropiado</h3>
+                            <p>No se permite contenido ofensivo o material para adultos.</p>
+                            <span class="rule-badge grave">Sanción grave</span>
+                        </div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-num">04</div>
+                        <div class="rule-body">
+                            <h3>No al cheating</h3>
+                            <p>El uso de hacks o exploits en eventos está completamente prohibido.</p>
+                            <span class="rule-badge grave">Ban permanente</span>
+                        </div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-num">05</div>
+                        <div class="rule-body">
+                            <h3>Un solo perfil</h3>
+                            <p>Crear múltiples cuentas para evadir sanciones resulta en ban permanente.</p>
+                            <span class="rule-badge grave">Ban permanente</span>
+                        </div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-num">06</div>
+                        <div class="rule-body">
+                            <h3>Publicá en la sección correcta</h3>
+                            <p>Los moderadores moverán o eliminarán posts fuera de lugar.</p>
+                            <span class="rule-badge leve">Aviso</span>
+                        </div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-num">07</div>
+                        <div class="rule-body">
+                            <h3>Respetá a los moderadores</h3>
+                            <p>Sus decisiones son finales. Usá el canal oficial para apelaciones.</p>
+                            <span class="rule-badge media">Sanción media</span>
+                        </div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-num">08</div>
+                        <div class="rule-body">
+                            <h3>Idioma español</h3>
+                            <p>Publicá en español para que todos puedan participar.</p>
+                            <span class="rule-badge leve">Aviso</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== MISIONES ===== -->
+        <div id="seccion-misiones" style="display:none">
+            <div class="page-header">
+                <span class="page-eyebrow">Los Santos Community</span>
+                <h1 class="page-title">Misiones <span>Disponibles</span></h1>
+                <p class="page-desc">Entrá a la misión que quieras y coordiná con tu equipo.</p>
+            </div>
+            <div class="page-main">
+                <div class="mision-card-simple">
+                    <h2 class="mision-card-titulo">Actividad</h2>
+                    <div class="mision-links">
+                        <a href="https://tulink1.com" target="_blank" class="mision-link-item">
+                            <span>link</span><span class="mision-link-arrow">→</span>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=kdfkr1WEzIc&list=RDkdfkr1WEzIc&index=1" target="_blank" class="mision-link-item">
+                            <span>link</span><span class="mision-link-arrow">→</span>
+                        </a>
+                        <a href="https://tulink3.com" target="_blank" class="mision-link-item">
+                            <span>link</span><span class="mision-link-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CAPTURAS — se llena desde Firebase ===== -->
+        <div id="seccion-capturas" style="display:none">
+            <div class="page-header">
+                <span class="page-eyebrow"></span>
+                <h1 class="page-title">Capturas de <span>Pantalla</span></h1>
+                <p class="page-desc">Las mejores fotos de la comunidad.</p>
+            </div>
+            <div class="page-main">
+                <div class="galeria-grid" id="galeria-grid">
+                    <!-- se llena automático desde Firebase -->
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL imagen grande -->
+        <div id="modal-imagen"
+            style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:999; align-items:center; justify-content:center;">
+            <img id="modal-img" src="" alt=""
+                style="max-width:90%; max-height:90vh; border-radius:4px; object-fit:contain;" />
+            <button onclick="cerrarModal()"
+                style="position:fixed; top:20px; right:24px; background:none; border:none; color:#fff; font-size:32px; cursor:pointer; line-height:1;">✕</button>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="footer-contenido">
+                <div class="footer-logo">
                     <img src="imagenes/gta-grand-theft-auto.svg" alt="Logo GTA" />
+                    <p>Los Santos Community</p>
                 </div>
-                <nav class="navegacion ocultar">
-                    <a href="#" class="activo" onclick="mostrar('inicio', this)">Inicio</a>
-                    <a href="#" onclick="mostrar('foro', this)">Foro</a>
-                    <a href="#" onclick="mostrar('unete', this)">Únete</a>
-                    <a href="#" onclick="mostrar('reglas', this)">Reglas</a>
-                    <a href="#" onclick="mostrar('misiones', this)">Misiones</a>
-                    <a href="#" onclick="mostrar('ayuda', this)">Ayuda</a>
-                    <a href="#" onclick="mostrar('buscar', this)">Buscar</a>
-                </nav>
-                <div class="hamburguesa"><span></span><span></span><span></span></div>
-            </div>
-        </div>
-
-        <section class="hero">
-            <img class="hero-image" src="imagenes/pngegg3.png" alt="Personajes GTA" />
-            <div class="hero-content">
-                <div class="live-badge">
-                    <span class="live-dot"></span>
-                    Comunidad activa
+                <div class="footer-links">
+                    <h4>Navegación</h4>
+                    <a href="#" onclick="mostrar('inicio', null)">Inicio</a>
+                    <a href="#" onclick="mostrar('foro', null)">Foro</a>
+                    <a href="#" onclick="mostrar('unete', null)">Únete</a>
+                    <a href="#" onclick="mostrar('reglas', null)">Reglas</a>
+                    <a href="#" onclick="mostrar('misiones', null)">Misiones</a>
                 </div>
-                <h1 class="hero-title">¡Bienvenido a<br><span>Los Santos</span>!</h1>
-                <p class="hero-desc">Únite a la comunidad más grande de GTA.</p>
-            </div>
-        </section>
-    </header>
-
-    <!-- ===== INICIO ===== -->
-    <div id="seccion-inicio">
-
-        <!-- CHAT FIREBASE -->
-        <div class="chat-box">
-            <div class="chat-header">
-                <div class="dot"></div>
-                <span>CHAT EN VIVO · LOS SANTOS COMMUNITY</span>
-                <div class="online-badge" id="onlineBadge">● EN LINEA</div>
-            </div>
-            <div class="mensajes" id="mensajes">
-                <div class="vacio" id="vacio">// cargando mensajes...</div>
-            </div>
-            <div class="chat-input">
-                <input type="text" id="inputNombre" placeholder="tu nombre..." maxlength="10" autocomplete="off" />
-                <input type="text" id="inputMensaje" placeholder="escribir mensaje..." maxlength="70" autocomplete="off" />
-                <button id="btnEnviar">ENVIAR</button>
-            </div>
-        </div>
-
-        <!-- GRID PRINCIPAL -->
-        <div class="grid-principal">
-
-            <!-- CARDS IZQUIERDA -->
-            <div class="contenedor-cards" style="margin:0;padding:0;">
-
-                <div class="card card-bienvenida">
-                    <div class="card-header">
-                        <img src="imagenes/pre.jpg" alt="imagen" class="card-img1" />
-                        <div><p class="pre-titulo">bienvenid@</p></div>
-                    </div>
-                    <div class="card-content1">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cupiditate enim inventore minima culpa distinctio explicabo unde corporis perspiciatis saepe.</p>
-                    </div>
+                <div class="footer-links">
+                    <h4>Comunidad</h4>
+                    <a href="#">Discord</a>
+                    <a href="#">Rockstar Social Club</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
                 </div>
-
-                <div class="card card-bienvenida">
-                    <div class="card-header">
-                        <img src="imagenes/pre.jpg" alt="imagen" class="card-img1" />
-                        <div><p class="pre-titulo">bienvenid@</p></div>
-                    </div>
-                    <div class="card-content1">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cupiditate enim inventore minima culpa distinctio explicabo unde corporis perspiciatis saepe.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header"><img src="imagenes/pre.jpg" alt="imagen" class="card-img" /></div>
-                    <div class="card-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cupiditate enim inventore minima culpa distinctio explicabo unde corporis perspiciatis saepe.</p></div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header"><img src="imagenes/pre.jpg" alt="imagen" class="card-img" /></div>
-                    <div class="card-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cupiditate enim inventore minima culpa distinctio explicabo unde corporis perspiciatis saepe.</p></div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header"><img src="imagenes/pre.jpg" alt="imagen" class="card-img" /></div>
-                    <div class="card-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cupiditate enim inventore minima culpa distinctio explicabo unde corporis perspiciatis saepe.</p></div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header"><img src="imagenes/pre.jpg" alt="imagen" class="card-img" /></div>
-                    <div class="card-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cupiditate enim inventore minima culpa distinctio explicabo unde corporis perspiciatis saepe.</p></div>
-                </div>
-
-            </div>
-
-            <!-- SIDEBAR DERECHA -->
-            <div style="margin:0;padding:0;">
-
-                <!-- CARD CAPTURAS -->
-                <div class="card1 card-capturas-sidebar">
-                    <h3 class="sidebar-titulo">📸 Capturas</h3>
-
-                    <div class="mini-galeria">
-                        <div class="mini-item" onclick="abrirModal(this)">
-                            <img src="imagenes/wallhaven-ymzyx7_1920x1080.png" alt="Captura 1" />
-                            <div class="mini-overlay">🔍</div>
-                        </div>
-                        <div class="mini-item" onclick="abrirModal(this)">
-                            <img src="imagenes/pre.jpg" alt="Captura 2" />
-                            <div class="mini-overlay">🔍</div>
-                        </div>
-                        <div class="mini-item" onclick="abrirModal(this)">
-                            <img src="imagenes/pre.jpg" alt="Captura 3" />
-                            <div class="mini-overlay">🔍</div>
-                        </div>
-                        <div class="mini-item" onclick="abrirModal(this)">
-                            <img src="imagenes/pre.jpg" alt="Captura 4" />
-                            <div class="mini-overlay">🔍</div>
-                        </div>
-                        <div class="mini-item" onclick="abrirModal(this)">
-                            <img src="imagenes/pre.jpg" alt="Captura 5" />
-                            <div class="mini-overlay">🔍</div>
-                        </div>
-                        <div class="mini-item" onclick="abrirModal(this)">
-                            <img src="imagenes/pre.jpg" alt="Captura 6" />
-                            <div class="mini-overlay">🔍</div>
-                        </div>
-                    </div>
-
-                    <a href="#" onclick="mostrar('capturas', null)" class="link-capturas">Ver todas las capturas →</a>
-                </div>
-
-                <!-- CARD COMUNIDAD -->
-                <div class="card1 card-comunidad">
-                    <h3>Comunidad</h3>
-                    <div class="redes">
-                        <a href="#" class="red discord"><img src="imagenes/discord.webp" alt="Discord" /></a>
-                        <a href="#" class="red socialclub"><img src="imagenes/rockstar.webp" alt="Social Club" /></a>
-                        <a href="#" class="red instagram"><img src="imagenes/55.svg" alt="Instagram" /></a>
-                        <a href="#" class="red facebook"><img src="imagenes/discord.webp" alt="Facebook" /></a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- VIDEOS -->
-        <div class="grid-full">
-            <div class="contenedor-nuevas">
-                <div class="card-video">
-                    <iframe class="video-card" src="https://www.youtube.com/embed/DZtvm1ATVD4" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="card-video">
-                    <iframe class="video-card" src="https://www.youtube.com/embed/rE47fMId0Iw" frameborder="0" allowfullscreen></iframe>
+                <div class="footer-links">
+                    <h4>Soporte</h4>
+                    <a href="#">Ayuda</a>
+                    <a href="#">Reportar bug</a>
+                    <a href="#">Contacto</a>
                 </div>
             </div>
-        </div>
+            <div class="footer-bottom">
+                <p>© 2026 GTA V PY · Comunidad no oficial · Todos los derechos reservados</p>
+            </div>
+        </footer>
 
-    </div>
+        <script src="app.js"></script>
+        <script type="module" src="chat-firebase.js"></script>
 
-    <!-- ===== REGLAS ===== -->
-    <div id="seccion-reglas" style="display:none">
-        <div class="page-header">
-            <span class="page-eyebrow">Comunidad oficial</span>
-            <h1 class="page-title">Reglas de la <span>Comunidad</span></h1>
-            <p class="page-desc">Leé y respetá las reglas para mantener una comunidad sana.</p>
-        </div>
-        <div class="page-main">
-            <div class="rules-grid">
-                <div class="rule-card"><div class="rule-num">01</div><div class="rule-body"><h3>Respeto ante todo</h3><p>No se toleran insultos, discriminación ni ataques personales.</p><span class="rule-badge grave">Sanción grave</span></div></div>
-                <div class="rule-card"><div class="rule-num">02</div><div class="rule-body"><h3>No spam</h3><p>Prohibido publicar mensajes repetidos o publicidad no autorizada.</p><span class="rule-badge media">Sanción media</span></div></div>
-                <div class="rule-card"><div class="rule-num">03</div><div class="rule-body"><h3>Sin contenido inapropiado</h3><p>No se permite contenido ofensivo o material para adultos.</p><span class="rule-badge grave">Sanción grave</span></div></div>
-                <div class="rule-card"><div class="rule-num">04</div><div class="rule-body"><h3>No al cheating</h3><p>El uso de hacks o exploits en eventos está completamente prohibido.</p><span class="rule-badge grave">Ban permanente</span></div></div>
-                <div class="rule-card"><div class="rule-num">05</div><div class="rule-body"><h3>Un solo perfil</h3><p>Crear múltiples cuentas para evadir sanciones resulta en ban permanente.</p><span class="rule-badge grave">Ban permanente</span></div></div>
-                <div class="rule-card"><div class="rule-num">06</div><div class="rule-body"><h3>Publicá en la sección correcta</h3><p>Los moderadores moverán o eliminarán posts fuera de lugar.</p><span class="rule-badge leve">Aviso</span></div></div>
-                <div class="rule-card"><div class="rule-num">07</div><div class="rule-body"><h3>Respetá a los moderadores</h3><p>Sus decisiones son finales. Usá el canal oficial para apelaciones.</p><span class="rule-badge media">Sanción media</span></div></div>
-                <div class="rule-card"><div class="rule-num">08</div><div class="rule-body"><h3>Idioma español</h3><p>Publicá en español para que todos puedan participar.</p><span class="rule-badge leve">Aviso</span></div></div>
-            </div>
-        </div>
-    </div>
+    </div><!-- fin .contenedor -->
 
-    <!-- ===== MISIONES ===== -->
-    <div id="seccion-misiones" style="display:none">
-        <div class="page-header">
-            <span class="page-eyebrow">Los Santos Community</span>
-            <h1 class="page-title">Misiones <span>Disponibles</span></h1>
-            <p class="page-desc">Completá misiones, ganá recompensas y subí en el ranking.</p>
-        </div>
-        <div class="page-main">
-            <div class="mission-filters">
-                <button class="filter-btn activo" onclick="filtrar('todas', this)">Todas</button>
-                <button class="filter-btn" onclick="filtrar('facil', this)">Fácil</button>
-                <button class="filter-btn" onclick="filtrar('media', this)">Media</button>
-                <button class="filter-btn" onclick="filtrar('dificil', this)">Difícil</button>
-            </div>
-            <div class="missions-grid">
-                <div class="mission-card" data-dif="facil"><div class="mission-header"><span class="mission-badge facil">Fácil</span><span class="mission-reward">$5,000</span></div><h3 class="mission-title">Entrega Rápida</h3><p class="mission-desc">Llevá un paquete desde el puerto hasta el aeropuerto sin que te atrapen. Tiempo: 8 min.</p><div class="mission-footer"><span class="mission-info">👤 1 jugador</span><a href="#" class="mission-btn">Iniciar</a></div></div>
-                <div class="mission-card" data-dif="facil"><div class="mission-header"><span class="mission-badge facil">Fácil</span><span class="mission-reward">$8,000</span></div><h3 class="mission-title">Fuga del Motel</h3><p class="mission-desc">Escapá del motel Sandy Shores antes de que lleguen los refuerzos.</p><div class="mission-footer"><span class="mission-info">👤 1-2 jugadores</span><a href="#" class="mission-btn">Iniciar</a></div></div>
-                <div class="mission-card" data-dif="media"><div class="mission-header"><span class="mission-badge media">Media</span><span class="mission-reward">$20,000</span></div><h3 class="mission-title">Robo al Banco de Paleto</h3><p class="mission-desc">Coordiná con tu equipo para vaciar las cajas fuertes antes de que llegue el SWAT.</p><div class="mission-footer"><span class="mission-info">👥 2-4 jugadores</span><a href="#" class="mission-btn">Iniciar</a></div></div>
-                <div class="mission-card" data-dif="media"><div class="mission-header"><span class="mission-badge media">Media</span><span class="mission-reward">$15,000</span></div><h3 class="mission-title">Carrera Nocturna</h3><p class="mission-desc">Del puerto hasta el aeropuerto por las calles de Los Santos. Sin reglas.</p><div class="mission-footer"><span class="mission-info">👥 2-8 jugadores</span><a href="#" class="mission-btn">Iniciar</a></div></div>
-                <div class="mission-card" data-dif="dificil"><div class="mission-header"><span class="mission-badge dificil">Difícil</span><span class="mission-reward">$50,000</span></div><h3 class="mission-title">Asalto a Maze Bank</h3><p class="mission-desc">Infiltrate al edificio más custodiado de la ciudad y escapá con vida.</p><div class="mission-footer"><span class="mission-info">👥 4 jugadores</span><a href="#" class="mission-btn">Iniciar</a></div></div>
-                <div class="mission-card" data-dif="dificil"><div class="mission-header"><span class="mission-badge dificil">Difícil</span><span class="mission-reward">$35,000</span></div><h3 class="mission-title">Infiltración a Fort Zancudo</h3><p class="mission-desc">Robá un tanque de la base militar más protegida del estado.</p><div class="mission-footer"><span class="mission-info">👥 2-4 jugadores</span><a href="#" class="mission-btn">Iniciar</a></div></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== CAPTURAS (sección completa) ===== -->
-    <div id="seccion-capturas" style="display:none">
-        <div class="page-header">
-            <span class="page-eyebrow">Los Santos Community</span>
-            <h1 class="page-title">Capturas de <span>Pantalla</span></h1>
-            <p class="page-desc">Las mejores fotos de la comunidad.</p>
-        </div>
-        <div class="page-main">
-            <div class="galeria-grid">
-                <div class="galeria-item" onclick="abrirModal(this)">
-                    <img src="imagenes/wallhaven-ymzyx7_1920x1080.png" alt="Captura 1" />
-                    <div class="galeria-overlay">🔍</div>
-                </div>
-                <div class="galeria-item" onclick="abrirModal(this)">
-                    <img src="imagenes/pre.jpg" alt="Captura 2" />
-                    <div class="galeria-overlay">🔍</div>
-                </div>
-                <div class="galeria-item" onclick="abrirModal(this)">
-                    <img src="imagenes/pre.jpg" alt="Captura 3" />
-                    <div class="galeria-overlay">🔍</div>
-                </div>
-                <div class="galeria-item" onclick="abrirModal(this)">
-                    <img src="imagenes/pre.jpg" alt="Captura 4" />
-                    <div class="galeria-overlay">🔍</div>
-                </div>
-                <div class="galeria-item" onclick="abrirModal(this)">
-                    <img src="imagenes/pre.jpg" alt="Captura 5" />
-                    <div class="galeria-overlay">🔍</div>
-                </div>
-                <div class="galeria-item" onclick="abrirModal(this)">
-                    <img src="imagenes/pre.jpg" alt="Captura 6" />
-                    <div class="galeria-overlay">🔍</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL imagen grande -->
-    <div id="modal-imagen" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:999; align-items:center; justify-content:center;">
-        <img id="modal-img" src="" alt="" style="max-width:90%; max-height:90vh; border-radius:4px; object-fit:contain;" />
-        <button onclick="cerrarModal()" style="position:fixed; top:20px; right:24px; background:none; border:none; color:#fff; font-size:32px; cursor:pointer; line-height:1;">✕</button>
-    </div>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="footer-contenido">
-            <div class="footer-logo">
-                <img src="imagenes/gta-grand-theft-auto.svg" alt="Logo GTA" />
-                <p>Los Santos Community</p>
-            </div>
-            <div class="footer-links">
-                <h4>Navegación</h4>
-                <a href="#" onclick="mostrar('inicio', null)">Inicio</a>
-                <a href="#" onclick="mostrar('foro', null)">Foro</a>
-                <a href="#" onclick="mostrar('unete', null)">Únete</a>
-                <a href="#" onclick="mostrar('reglas', null)">Reglas</a>
-                <a href="#" onclick="mostrar('misiones', null)">Misiones</a>
-            </div>
-            <div class="footer-links">
-                <h4>Comunidad</h4>
-                <a href="#">Discord</a>
-                <a href="#">Rockstar Social Club</a>
-                <a href="#">Instagram</a>
-                <a href="#">YouTube</a>
-            </div>
-            <div class="footer-links">
-                <h4>Soporte</h4>
-                <a href="#">Ayuda</a>
-                <a href="#">Reportar bug</a>
-                <a href="#">Contacto</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 GTA V PY · Comunidad no oficial · Todos los derechos reservados</p>
-        </div>
-    </footer>
-
-    <script src="app.js"></script>
-    <script type="module" src="chat-firebase.js"></script>
-    </div>
 </body>
 </html>

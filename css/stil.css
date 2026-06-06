@@ -7,12 +7,16 @@
 }
 
 body {
+    
     font-family: 'Averia Sans Libre', sans-serif;
     background: #000000;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
+
+
+
 
 .contenedor{
     width: 1000px;      /* ancho fijo */
@@ -25,6 +29,18 @@ h1, h2, h3 {
     font-family: "Changa One", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+.slide-texto {
+    color: #00e5cc;
+}
+
+/* CSS */
+.palabra {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.35s, transform 0.35s;
 }
 
 /*===== NAV =====*/ 
@@ -87,13 +103,15 @@ h1, h2, h3 {
 }
 
 
+
+
 /* ===== HERO ===== */
 .hero-section {
     position: relative;
     min-height: 500px;
     display: flex;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .hero-content {
@@ -143,14 +161,10 @@ h1, h2, h3 {
 }
 
 .personaje-hero {
-    position: absolute;
-    bottom: 0;
-    left: 40%;
-    right: auto;
-    transform: none;
-    height: 95%;
-    object-fit: contain;
-    z-index: 2;
+  height: 100%;        /* ← que se ajuste al contenedor */
+  max-height: 400px;   /* ← mismo valor que el encabezado */
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .hero-cta {
@@ -182,6 +196,7 @@ h1, h2, h3 {
     border-radius: 8px;
     overflow: hidden;
     font-family: monospace;
+    
 }
 
 .chat-header {
@@ -238,6 +253,7 @@ h1, h2, h3 {
 .mensajes::-webkit-scrollbar-thumb { background: #1a3050; border-radius: 4px; }
 
 .mensaje {
+    display: flex;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(0, 180, 180, 0.12);
     border-radius: 6px;
@@ -251,22 +267,30 @@ h1, h2, h3 {
 }
 
 .msg-top {
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 4px;
 }
 
 .msg-nombre {
+
+    white-space: nowrap;    /* ← el nombre no se parte */
     color: #00e5cc;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
 
+.msg-nombre::after {
+    content: ':';           /* ← agrega los dos puntos automático */
+}
+
 .msg-hora {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgb(0, 0, 0);
     font-size: 0.72rem;
+    white-space: nowrap; 
+    margin-left: auto;    /* ← pegada a la derecha */
 }
 
 .msg-texto {
@@ -274,6 +298,7 @@ h1, h2, h3 {
     font-size: 0.88rem;
     line-height: 1.5;
     word-break: break-word;
+    flex: 1;
 }
 
 .vacio {
@@ -370,6 +395,13 @@ h1, h2, h3 {
     padding: 0 1.5rem;
     margin: 2rem auto;
 }
+/*===================imagen que cambia en el titulo============*/
+
+
+/* Slider */
+
+
+/*=========================*/
 
 /* ===== CARDS ===== */
 .contenedor-cards {
@@ -426,17 +458,17 @@ h1, h2, h3 {
     padding: 0.5rem 1.25rem 1.25rem;
 }
 
-.card-content p  { font-size: 0.95rem; line-height: 1.7; color: #ffffff; }
-.card-content1 p { font-size: 0.95rem; line-height: 1.7; color: #000000; }
+.card-content p  { font-size: 0.95rem; line-height: 1.7; color: #fee000;   font-family: 'Poppins', sans-serif;}
+.card-content1 p { font-size: 0.95rem; line-height: 1.7; color: #fee000; }
 
 /* CARD BIENVENIDA */
 .card.card-bienvenida {
-    background: #ffffff;
+    background: #191818;
     position: relative;
 }
 
 .card.card-bienvenida .card-header {
-    background: #ffffff;
+    background: #191818;
     padding-top: 2.5rem;
 }
 
@@ -706,6 +738,10 @@ h1, h2, h3 {
     .navegacion { display: none; }
     .hamburguesa { display: flex; }
     .ocultar { display: none; }
+
+    .body {
+        width: 768px;
+    }
 
     .navegacion.abierto {
         display: flex;

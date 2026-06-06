@@ -1,7 +1,6 @@
 // ================================================
-//   CHAT-FIREBASE.JS — chat en tiempo real
+//   CHAT-FIREBASE.JS — chat + galería en tiempo real
 //   Uso: <script type="module" src="chat-firebase.js"></script>
-//   IMPORTANTE: este archivo va separado de app.js
 // ================================================
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
@@ -9,16 +8,14 @@ import {
   getFirestore,
   collection,
   addDoc,
+  getDocs,
   onSnapshot,
   orderBy,
   query,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// ⚠️ TUS CREDENCIALES DE FIREBASE
-// Después de pegar esto, andá a Firebase Console →
-// Configuración → Restricciones de API key →
-// Agregá solo tu dominio: rodrigo33333.github.io
+// ── Credenciales Firebase ──
 const firebaseConfig = {
   apiKey:            "AIzaSyAmYJM3pXqcW8dvN4T2yvZp1b-dD2B2r1Q",
   authDomain:        "acc1-3f87f.firebaseapp.com",
@@ -31,7 +28,10 @@ const firebaseConfig = {
 // ── Inicializar Firebase ──
 const app = initializeApp(firebaseConfig);
 const db  = getFirestore(app);
-const col = collection(db, "mensajes");
+
+// ── Colecciones ──
+const colMensajes = collection(db, "mensajes");
+const colGaleria  = collection(db, "galeria");
 
 // ── Referencias al DOM ──
 const contenedor   = document.getElementById("mensajes");
@@ -40,10 +40,12 @@ const inputNombre  = document.getElementById("inputNombre");
 const inputMensaje = document.getElementById("inputMensaje");
 const btnEnviar    = document.getElementById("btnEnviar");
 
-// ── Escuchar mensajes en tiempo real ──
-const q = query(col, orderBy("fecha", "asc"));
+// ================================================
+//   CHAT — escuchar mensajes en tiempo real
+// ================================================
+const qMensajes = query(colMensajes, orderBy("fecha", "asc"));
 
-onSnapshot(q, (snapshot) => {
+onSnapshot(qMensajes, (snapshot) => {
   if (snapshot.empty) {
     if (vacio) { vacio.textContent = "// sin mensajes aún..."; vacio.style.display = "block"; }
     return;
@@ -61,11 +63,9 @@ onSnapshot(q, (snapshot) => {
     const div = document.createElement("div");
     div.className = "mensaje";
     div.innerHTML = `
-      <div class="msg-top">
-        <span class="msg-nombre">${escapeHTML(m.nombre)}</span>
-        <span class="msg-hora">${hora}</span>
-      </div>
-      <div class="msg-texto">${escapeHTML(m.texto)}</div>
+      <span class="msg-nombre">${escapeHTML(m.nombre)}</span>
+      <span class="msg-texto">${escapeHTML(m.texto)}</span>
+      <span class="msg-hora">${hora}</span>
     `;
     contenedor.appendChild(div);
   });
@@ -85,7 +85,7 @@ async function enviar() {
   btnEnviar.textContent = "...";
 
   try {
-    await addDoc(col, { nombre, texto, fecha: serverTimestamp() });
+    await addDoc(colMensajes, { nombre, texto, fecha: serverTimestamp() });
     inputMensaje.value = "";
     inputMensaje.focus();
   } catch (err) {
@@ -97,11 +97,68 @@ async function enviar() {
   }
 }
 
-// ── Eventos ──
+// ── Eventos chat ──
 if (btnEnviar)    btnEnviar.addEventListener("click", enviar);
 if (inputMensaje) inputMensaje.addEventListener("keydown", e => { if (e.key === "Enter") enviar(); });
 
-// ── Utilidad ──
+// ================================================
+//   GALERÍA — cargar desde Firebase
+// ================================================
+async function cargarGaleria() {
+  const galeriaGrid  = document.getElementById("galeria-grid");
+  const miniGaleria  = document.getElementById("mini-galeria");
+
+  try {
+    const qGaleria = query(colGaleria, orderBy("orden", "asc"));
+    const snapshot = await getDocs(qGaleria);
+
+    if (snapshot.empty) return;
+
+    // Galería completa (sección capturas)
+    if (galeriaGrid) {
+      galeriaGrid.innerHTML = "";
+      snapshot.forEach((doc) => {
+        const { url, titulo } = doc.data();
+        const item = document.createElement("div");
+        item.className = "galeria-item";
+        item.onclick = () => abrirModal(item);
+        item.innerHTML = `
+          <img src="${url}" alt="${escapeHTML(titulo)}" />
+          <div class="galeria-overlay">🔍</div>
+        `;
+        galeriaGrid.appendChild(item);
+      });
+    }
+
+    // Mini galería del sidebar (solo las primeras 6)
+    if (miniGaleria) {
+      miniGaleria.innerHTML = "";
+      let count = 0;
+      snapshot.forEach((doc) => {
+        if (count >= 6) return;
+        const { url, titulo } = doc.data();
+        const item = document.createElement("div");
+        item.className = "mini-item";
+        item.onclick = () => abrirModal(item);
+        item.innerHTML = `
+          <img src="${url}" alt="${escapeHTML(titulo)}" />
+          <div class="mini-overlay">🔍</div>
+        `;
+        miniGaleria.appendChild(item);
+        count++;
+      });
+    }
+
+  } catch (err) {
+    console.error("Error cargando galería:", err);
+  }
+}
+
+cargarGaleria();
+
+// ================================================
+//   UTILIDADES
+// ================================================
 function escapeHTML(str) {
   return String(str)
     .replace(/&/g, "&amp;")
@@ -110,22 +167,16 @@ function escapeHTML(str) {
     .replace(/"/g, "&quot;");
 }
 
-// hero.js — Lógica del hero
-// Animación de contadores al cargar la página
-
+// Animación de contadores
 document.addEventListener('DOMContentLoaded', () => {
-
-  // Anima cada número desde 0 hasta su valor real
   const counters = document.querySelectorAll('.hero-stat-num[data-target]');
-
   counters.forEach(counter => {
-    const target = parseInt(counter.dataset.target, 10);
-    const duration = 1600; // ms
-    const steps = 60;
+    const target    = parseInt(counter.dataset.target, 10);
+    const duration  = 1600;
+    const steps     = 60;
     const increment = target / steps;
     let current = 0;
-    let step = 0;
-
+    let step    = 0;
     const timer = setInterval(() => {
       step++;
       current = Math.min(Math.round(increment * step), target);
@@ -133,5 +184,4 @@ document.addEventListener('DOMContentLoaded', () => {
       if (current >= target) clearInterval(timer);
     }, duration / steps);
   });
-
 });

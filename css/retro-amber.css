@@ -72,9 +72,9 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(192, 57, 43, 0.18);
-    border: 1px solid rgba(192, 57, 43, 0.45);
-    color: #e74c3c;
+    background: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    color: #3ce7d3;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 10px;
     letter-spacing: 0.14em;
@@ -88,7 +88,7 @@ body {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #e74c3c;
+    background: #00f2ff;
     animation: pulse 1.4s infinite;
 }
 
@@ -116,7 +116,7 @@ body {
 }
 
 .hero-title span {
-    color: #9fa832;
+    color: #ffffff;
 }
 
 /* Descripción */

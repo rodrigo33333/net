@@ -47,10 +47,35 @@
 }
 
 .navbar-links a.activo {
-  background: #9fa832;
-  color: #1a1d05;
+  background: #ea0000;
+  color: #e74900;
 }
 
+.encabezado {
+  background-image: url(../imagenes/wallhaven-ymzyx7_1920x1080.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  
+  max-height: 400px; /* ← limitá la altura acá */
+  overflow: hidden;  /* ← evita que la imagen se salga */
+}
+
+.encabezado::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* 0.5 = 50% oscuro, ajustá a tu gusto */
+  z-index: 0;
+}
+
+/* Asegurate que el contenido quede por encima del overlay */
+.contenedor-navegacion,
+.hero-section {
+  position: relative;
+  z-index: 1;
+}
 /* ---------- PAGE HEADER ---------- */
 
 .page-header {
@@ -63,7 +88,7 @@
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 10px;
   letter-spacing: 0.2em;
-  color: #9fa832;
+  color: #a8326f;
   text-transform: uppercase;
   display: block;
   margin-bottom: 0.75rem;
@@ -80,7 +105,7 @@
 }
 
 .page-title span {
-  color: #9fa832;
+  color: #7e0091;
 }
 
 .page-desc {
@@ -169,7 +194,7 @@
 }
 
 .rules-footer a {
-  color: #9fa832;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -177,134 +202,57 @@
   text-decoration: underline;
 }
 
-/* ---------- MISIONES ---------- */
+/* ---------- CARD MISIÓN SIMPLE ---------- */
 
-.mission-filters {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 1.5rem;
+.mision-card-simple {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 0.25;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.filter-btn {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 6px 18px;
-  border-radius: 3px;
-  border: 1px solid rgba(255,255,255,0.15);
-  background: transparent;
-  color: rgba(255,255,255,0.5);
-  cursor: pointer;
-  transition: all 0.15s;
+.mision-card-titulo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
-.filter-btn:hover {
-  border-color: #9fa832;
-  color: #9fa832;
+.mision-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
-.filter-btn.activo {
-  background: #9fa832;
-  color: #1a1d05;
-  border-color: #9fa832;
+.mision-link-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    background: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 5px;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.15s, border-color 0.15s;
 }
 
-.missions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 12px;
+.mision-link-item:hover {
+    background: #222;
+    border-color: #9fa832;
+    color: #fff;
 }
 
-.mission-card {
-  display: flex;
-  flex-direction: column;
-  background: #111;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 6px;
-  padding: 1.25rem;
-  transition: border-color 0.2s, transform 0.15s;
-}
-
-.mission-card:hover {
-  border-color: rgba(159,168,50,0.4);
-  transform: translateY(-2px);
-}
-
-.mission-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.mission-badge {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 2px;
-}
-
-.mission-badge.facil   { background: rgba(39,174,96,0.18);  color: #27ae60; border: 1px solid rgba(39,174,96,0.3); }
-.mission-badge.media   { background: rgba(230,126,34,0.18); color: #e67e22; border: 1px solid rgba(230,126,34,0.3); }
-.mission-badge.dificil { background: rgba(192,57,43,0.18);  color: #e74c3c; border: 1px solid rgba(192,57,43,0.3); }
-
-.mission-reward {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: #9fa832;
-}
-
-.mission-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.mission-desc {
-  font-size: 13px;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.6;
-  flex: 1;
-  margin-bottom: 14px;
-}
-
-.mission-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255,255,255,0.07);
-}
-
-.mission-info {
-  font-size: 12px;
-  color: rgba(255,255,255,0.4);
-}
-
-.mission-btn {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: #9fa832;
-  color: #1a1d05;
-  padding: 6px 16px;
-  border-radius: 3px;
-  text-decoration: none;
-  transition: background 0.15s;
-}
-
-.mission-btn:hover {
-  background: #c8d640;
+.mision-link-arrow {
+    color: #9fa832;
+    font-size: 16px;
 }
 
 /* ============================================================
@@ -389,7 +337,7 @@
 }
 
 .page-title span {
-  color: #9fa832;
+  color: #d8cccc;
 }
 
 .page-desc {
@@ -484,6 +432,58 @@
 
 .rules-footer a:hover {
   text-decoration: underline;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 200px;
+  overflow: hidden;
+  position: relative; /* solo para el personaje */
+}
+
+.hero-content {
+  flex: 1;           /* ocupa el espacio disponible */
+  padding: 40px 60px;
+  z-index: 2;
+}
+
+.personaje-hero {
+
+  margin-right: 10px;
+  height: 350px;
+  max-height: 480px;
+  object-fit: contain;
+  flex-shrink: 0;    /* no se achica */
+  z-index: 2;
+}
+
+.slider {
+
+  align-self: flex-start;
+  width: 280px;
+  height: 180px;
+  flex-shrink: 0;    /* no se achica */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: -8px 8px 32px rgba(0, 0, 0, 0.8);
+  margin-right: 20px; /* separación del borde */
+  position: relative; /* para los slides adentro */
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.slide.active {
+  opacity: 1;
 }
 
 /* ---------- MISIONES ---------- */
@@ -700,7 +700,7 @@
   transition: color 0.15s;
 }
 
-.link-capturas:hover { color: #c8d640; }
+.link-capturas:hover { color: #e99a11; }
 
 /* ---------- GALERÍA COMPLETA ---------- */
 
@@ -750,6 +750,75 @@
   .galeria-grid { grid-template-columns: repeat(2, 1fr); }
   .galeria-item img { height: 130px; }
 }
+
+
+/*CARD CON LINK ADENTRO*/
+
+.mision-parrafo {
+    font-size: 100px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* palabra con color distinto y clickeable */
+.texto-link {
+    color: #f32d00;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.15s;
+
+    /* tamaño */
+    font-size: 16px;
+
+    /* grosor */
+    font-weight: 700;
+
+    /* fuente distinta */
+    font-family: 'Barlow Condensed', sans-serif;
+
+    /* sin subrayado */
+    text-decoration: none;
+
+    /* subrayado solo al hover */
+    text-decoration: none;
+
+}
+
+.texto-link:hover {
+    color: #dd1533;
+}
+
+/*======================================*/
+
+.data-text {
+  font-size: 15px;
+}
+
+.glitch {
+  
+  position: relative;
+  display: inline-block;
+  color: #00d9a0;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+}
+.glitch::before {
+  color: #ff003c;
+  clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
+}
+.glitch::after {
+  color: #00cfff;
+  clip-path: polygon(0 60%, 100% 60%, 100% 75%, 0 75%);
+}
+.glitch.active::before { transform: translateX(-3px); }
+.glitch.active::after  { transform: translateX(3px); }
+
 
 
 /* ---------- RESPONSIVE ---------- */
