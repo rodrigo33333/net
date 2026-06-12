@@ -55,8 +55,8 @@ function filtrar(dif, btn) {
 const secciones = ['inicio', 'reglassss', 'misiones', 'capturas', 'foro', 'unete', 'ayuda', 'buscar'];
 
 function mostrar(seccion, link) {
-  secciones.forEach(s => {
-    const el = document.getElementById('seccion-' + s);
+  secciones.forEach(seccion => {
+    const el = document.getElementById('seccion-' + seccion);
     if (el) el.style.display = 'none';
   });
 
