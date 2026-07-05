@@ -37,7 +37,7 @@ function mostrar(seccion, link) {
   else document.getElementById('seccion-inicio').style.display = 'block';
 
   // Link activo
-  document.querySelectorAll('.navegacion a').forEach(a => a.classList.remove('activo'));
+  document.querySelectorAll('.headerLinks a').forEach(a => a.classList.remove('activo'));
   if (link) link.classList.add('activo');
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -52,11 +52,11 @@ function filtrar(dif, btn) {
 }
 
 // ===== NAVEGACIÓN SIN RECARGAR =====
-const secciones = ['inicio', 'reglassss', 'misiones', 'capturas', 'foro', 'unete', 'ayuda', 'buscar'];
+const secciones = ['inicio', 'reglas', 'misiones', 'capturas', 'foro', 'unete', 'ayuda', 'buscar'];
 
 function mostrar(seccion, link) {
-  secciones.forEach(seccion => {
-    const el = document.getElementById('seccion-' + seccion);
+  secciones.forEach(s => {
+    const el = document.getElementById('seccion-' + s);
     if (el) el.style.display = 'none';
   });
 
@@ -64,8 +64,13 @@ function mostrar(seccion, link) {
   if (target) target.style.display = 'block';
   else document.getElementById('seccion-inicio').style.display = 'block';
 
-  document.querySelectorAll('.navegacion a').forEach(a => a.classList.remove('activo'));
-  if (link) link.classList.add('activo');
+  // Saca "activo" de TODOS los links (navbar + sidebar)
+  document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('activo'));
+
+  // Pone "activo" en TODOS los que apunten a esta sección
+  document.querySelectorAll('.nav-link[data-seccion="' + seccion + '"]').forEach(a => {
+    a.classList.add('activo');
+  });
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -149,3 +154,14 @@ function slideEntrada() {
 }
 
 slideEntrada();
+
+/* ============================================================
+   Agregar esta función a tu app.js (no la tengo, así que pegala
+   ahí donde tengas tus otras funciones, ej. junto a mostrar()).
+   ============================================================ */
+
+function toggleText(id, btn) {
+    const texto = document.getElementById(id);
+    texto.classList.toggle('expanded');
+    btn.textContent = texto.classList.contains('expanded') ? 'Ver menos' : 'Ver más';
+}

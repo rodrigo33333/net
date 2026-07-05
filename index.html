@@ -5,342 +5,373 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Malditopy3</title>
+    <link rel="icon" type="image/svg+xml" href="imagenes/wallhaven-o5zml7_2560x1440.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Changa+One:ital@0;1&family=Prosto+One&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Changa+One:ital@0;1&family=Prosto+One&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/igta5-style.css" />
     <link rel="stylesheet" href="css/stil.css" />
     <link rel="stylesheet" href="css/retro-amber.css" />
     <link rel="stylesheet" href="css/paginas.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 </head>
 
 <body>
 
-    <div class="contenedor">
+    <div class="container">
 
         <!-- ===== HEADER ===== -->
-        <header class="encabezado">
-            <div class="contenedor-navegacion">
-                <div class="contenido-navegacion contenedor">
-                    <div class="logo">
-                        <img src="imagenes/gta-grand-theft-auto.svg" alt="Logo GTA" />
-                    </div>
-                    <nav class="navegacion ocultar">
-                        <a href="#" class="activo" onclick="mostrar('inicio', this)">Inicio</a>
-                        <a href="#" onclick="mostrar('foro', this)">Foro</a>
-                        <a href="#" onclick="mostrar('unete', this)">Únete</a>
-                        <a href="#" onclick="mostrar('reglas', this)">Reglas</a>
-                        <a href="#" onclick="mostrar('misiones', this)">Misiones</a>
-                        <a href="#" onclick="mostrar('ayuda', this)">Ayuda</a>
-                        <a href="#" onclick="mostrar('buscar', this)">Buscar</a>
-                    </nav>
-                    <div class="hamburguesa"><span></span><span></span><span></span></div>
+        <div class="header">
+            <!-- Banner ancho arriba -->
+            <div class="header-banner">
+                <a href="#" onclick="mostrar('inicio', this)">
+                    <img src="imagenes/Diseño sin título.png" alt="Malditopy3">
+                </a>
+            </div>
+            <!-- Franja de navbar debajo del banner -->
+            <div class="headerLinks">
+                <div class="headerLinks-nav">
+                    <a href="#" onclick="mostrar('inicio', this)" data-seccion="inicio"
+                        class="nav-link activo">Inicio</a>
+                    <a href="#" onclick="mostrar('foro', this)" data-seccion="foro" class="nav-link">Foro</a>
+                    <a href="#" onclick="mostrar('unete', this)" data-seccion="unete" class="nav-link">Únete</a>
+                    <a href="#" onclick="mostrar('reglas', this)" data-seccion="reglas" class="nav-link">Reglas</a>
+                    <a href="#" onclick="mostrar('misiones', this)" data-seccion="misiones"
+                        class="nav-link">Misiones</a>
+                    <a href="#" onclick="mostrar('capturas', this)" data-seccion="capturas"
+                        class="nav-link">Imágenes</a>
+                </div>
+                <form name="minisearchForm" id="minisearchForm" action="#" method="post" onsubmit="return false;">
+                    <input type="text" name="minisearch" id="minisearch" placeholder="buscar...">
+                </form>
+            </div>
+            <div class="clear-fix"></div>
+        </div>
+
+        <!-- ===== SIDEBAR (float izquierda) ===== -->
+        <div class="sidebar1">
+
+            <nav class="nav-lateral" style="width:100%;float:none;border-right:none;">
+                <p class="nav-lateral__titulo">Navegación</p>
+                <a href="#" onclick="mostrar('inicio', this)" data-seccion="inicio" class="nav-lateral__link activo">
+                    <i class="ti ti-home" aria-hidden="true"></i> Inicio
+                </a>
+                <a href="#" onclick="mostrar('foro', this)" data-seccion="foro" class="nav-lateral__link">
+                    <i class="ti ti-messages" aria-hidden="true"></i> Foro
+                </a>
+                <a href="#" onclick="mostrar('unete', this)" data-seccion="unete" class="nav-lateral__link">
+                    <i class="ti ti-user-plus" aria-hidden="true"></i> Únete
+                </a>
+                <a href="#" onclick="mostrar('reglas', this)" data-seccion="reglas" class="nav-lateral__link">
+                    <i class="ti ti-shield" aria-hidden="true"></i> Reglas
+                </a>
+                <a href="#" onclick="mostrar('misiones', this)" data-seccion="misiones" class="nav-lateral__link">
+                    <i class="ti ti-target" aria-hidden="true"></i> Misiones
+                </a>
+                <a href="#" onclick="mostrar('ayuda', this)" data-seccion="ayuda" class="nav-lateral__link">
+                    <i class="ti ti-help-circle" aria-hidden="true"></i> Ayuda
+                </a>
+                <a href="#" onclick="mostrar('buscar', this)" data-seccion="buscar" class="nav-lateral__link">
+                    <i class="ti ti-search" aria-hidden="true"></i> Buscar
+                </a>
+            </nav>
+
+            <!-- CARD CAPTURAS — se llena desde Firebase -->
+            <div class="card1 card-capturas-sidebar" style="width:100%;margin-top:10px;">
+                <h3 class="sidebar-titulo">Capturas</h3>
+                <div class="imagen-aleatoria" id="mini-galeria"></div>
+                <a href="#" onclick="mostrar('capturas', null)" class="link-capturas">Ver todas las capturas →</a>
+            </div>
+
+            <!-- CARD COMUNIDAD -->
+            <div class="card1 card-comunidad" style="width:100%;margin-top:10px;">
+                <h3>Comunidad</h3>
+                <div class="redes">
+                    <a href="#" class="red discord"><img src="imagenes/twitch-logo-2019.svg" alt="Discord" /></a>
+                    <a href="https://www.reddit.com/r/gtavcustoms/" class="red socialclub"><img
+                            src="imagenes/reddit-1.svg" alt="Social Club" /></a>
+                    <a href="#" class="red instagram"><img src="imagenes/youtube-2.svg" alt="Instagram" /></a>
+                    <a href="#" class="red facebook"><img src="imagenes/discord.webp" alt="Facebook" /></a>
                 </div>
             </div>
 
-            <section class="hero-section">
-                <!-- IZQUIERDA: texto -->
-                <div class="hero-content">
-                    <div class="live-badge">
-                        <span class="live-dot"></span>
-                        Comunidad activa
+        </div>
+
+        <!-- ===== CONTENT (float derecha) ===== -->
+        <div class="content">
+
+            <!-- ===== INICIO ===== -->
+            <div id="seccion-inicio">
+
+                <!-- CHAT FIREBASE -->
+                <div class="chat-box" style="margin:0 0 1.5rem 0;width:100%;max-width:100%;">
+                    <div class="chat-header">
+                        <div class="dot"></div>
+                        <span>CHAT EN VIVO · LOS SANTOS COMMUNITY</span>
+                        <div class="online-badge" id="onlineBadge">● EN LINEA</div>
                     </div>
-                    <h1 class="slide-texto">Bienvenido a Los Santos</h1>
-                    <p class="hero-desc">Únite a la comunidad más grande de GTA.</p>
+                    <div class="mensajes" id="mensajes">
+                        <div class="vacio" id="vacio">// cargando mensajes...</div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="inputNombre" placeholder="tu nombre..." maxlength="10"
+                            autocomplete="off" />
+                        <input type="text" id="inputMensaje" placeholder="escribir mensaje..." maxlength="100"
+                            autocomplete="off" />
+                        <button id="btnEnviar">ENVIAR</button>
+                    </div>
                 </div>
 
-                <!-- CENTRO: personaje -->
-                <img class="personaje-hero" src="imagenes/pngegg3.png" alt="Personajes GTA" />
+                <!-- NEWS CARDS -->
+                <div class="news-card" style="max-width:100%;">
+                    <h2 class="news-card__title">Tu Título Aquí</h2>
+                    <p class="news-card__text" id="text1">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cupiditate enim inventore
+                        minima culpa distinctio explicabo unde corporis perspiciatis saepe Grand Theft Auto V and
+                        GTA Online for PlayStation 5 and Xbox Series X|S features new graphics modes with up to 4K
+                        resolution
 
-                <!-- DERECHA: slider -->
-                <div class="slider">
-                    <img class="slide active" src="imagenes/wallhaven-0q17xl_3840x2400.png" alt="">
-                    <img class="slide" src="imagenes/wallhaven-x63z13_1920x1080.png" alt="">
-                    <img class="slide" src="imagenes/img3.jpg" alt="">
-                </div>
-            </section>
-        </header>
+                        With the unprecedented longevity of GTAV, we know many of you have been asking us about a
+                        new entry
+                        in
+                        the Grand Theft Auto series. With every new project we embark on, our goal is always to
+                        significantly
+                        move beyond what we have previously delivered — and we are pleased to confirm that active
 
-        <!-- ===== INICIO ===== -->
-        <div id="seccion-inicio">
-
-            <!-- CHAT FIREBASE -->
-            <div class="chat-box">
-                <div class="chat-header">
-                    <div class="dot"></div>
-                    <span>CHAT EN VIVO · LOS SANTOS COMMUNITY</span>
-                    <div class="online-badge" id="onlineBadge">● EN LINEA</div>
-                </div>
-                <div class="mensajes" id="mensajes">
-                    <div class="vacio" id="vacio">// cargando mensajes...</div>
-                </div>
-                <div class="chat-input">
-                    <input type="text" id="inputNombre" placeholder="tu nombre..." maxlength="10" autocomplete="off" />
-                    <input type="text" id="inputMensaje" placeholder="escribir mensaje..." maxlength="70" autocomplete="off" />
-                    <button id="btnEnviar">ENVIAR</button>
-                </div>
-            </div>
-
-            <!-- GRID PRINCIPAL -->
-            <div class="grid-principal">
-
-                <!-- CARDS IZQUIERDA -->
-                <div class="contenedor-cards" style="margin:0;padding:0;">
-
-                    <div class="card card-bienvenida">
-                        <div class="card-header">
-                            <img src="imagenes/pre.jpg" alt="imagen" class="card-img1" />
-                            <div><p class="pre-titulo">bienvenid@</p></div>
-                        </div>
-                        <div class="card-content1">
-                            <p class="mision-parrafo">
-                                Esta misión requiere coordinación. Antes de entrar asegurate de leer las
-                                <a href="#" onclick="mostrar('reglas', this)" class="texto-link">reglas de la comunidad</a>.
-                                El objetivo es llegar al edificio sin ser detectado.
-                            </p>
-                            <p class="mision-parrafo">
-                                Uníte al
-                                <a href="https://discord.gg/tuservidor" target="_blank" class="texto-link">Discord</a>
-                                para coordinarte con tu equipo antes de iniciar.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card card-bienvenida">
-                        <div class="card-header">
-                            <img src="imagenes/pre.jpg" alt="imagen" class="card-img1" />
-                            <div><p class="pre-titulo">bienvenid@</p></div>
-                        </div>
-                        <div class="card-content1">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cupiditate enim inventore minima culpa distinctio explicabo unde corporis perspiciatis saepe.</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header"><img src="imagenes/pre.jpg" alt="imagen" class="card-img" /></div>
-                        <div class="card-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header"><img src="imagenes/pre.jpg" alt="imagen" class="card-img" /></div>
-                        <div class="card-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header"><img src="imagenes/pre.jpg" alt="imagen" class="card-img" /></div>
-                        <div class="card-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header"><img src="imagenes/pre.jpg" alt="imagen" class="card-img" /></div>
-                        <div class="card-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
-                    </div>
-
+                        the Grand Theft Auto series. With every new project we embark on, our goal is always to
+                    </p>
                 </div>
 
-                <!-- SIDEBAR DERECHA -->
-                <div style="margin:0;padding:0;">
+                <div class="news-card" style="max-width:100%;margin-top:1rem;">
+                    <h2 class="news-card__title">Tu Título Aquí</h2>
+                    <p class="news-card__text" id="text1">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cupiditate enim inventore
+                        minima culpa distinctio explicabo unde corporis perspiciatis saepe Grand Theft Auto V and
+                        GTA Online for PlayStation 5 and Xbox Series X|S features new graphics modes with up to 4K
+                        resolution
 
-                    <!-- CARD CAPTURAS — se llena desde Firebase -->
-                    <div class="card1 card-capturas-sidebar">
-                        <h3 class="sidebar-titulo">📸 Capturas</h3>
-                        <div class="mini-galeria" id="mini-galeria"></div>
-                        <a href="#" onclick="mostrar('capturas', null)" class="link-capturas">Ver todas las capturas →</a>
-                    </div>
-
-                    <!-- CARD COMUNIDAD -->
-                    <div class="card1 card-comunidad">
-                        <h3>Comunidad</h3>
-                        <div class="redes">
-                            <a href="#" class="red discord"><img src="imagenes/discord.webp" alt="Discord" /></a>
-                            <a href="#" class="red socialclub"><img src="imagenes/rockstar.webp" alt="Social Club" /></a>
-                            <a href="#" class="red instagram"><img src="imagenes/55.svg" alt="Instagram" /></a>
-                            <a href="#" class="red facebook"><img src="imagenes/discord.webp" alt="Facebook" /></a>
-                        </div>
-                    </div>
-
+                        With the unprecedented longevity of GTAV, we know many of you have been asking us about a
+                        new entry
+                        in
+                        the Grand Theft Auto series. With every new project we embark on, our goal is always to
+                        significantly
+                        move beyond what we have previously delivered — and we are pleased to confirm that active
+                    </p>
                 </div>
-            </div>
 
-            <!-- VIDEOS -->
-            <div class="grid-full">
-                <div class="contenedor-nuevas">
+                <div class="news-card" style="max-width:100%;margin-top:1rem;">
+                    <h2 class="news-card__title">Tu Título Aquí</h2>
+                    <p class="news-card__text" id="text1">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cupiditate enim inventore
+                        minima culpa distinctio explicabo unde corporis perspiciatis saepe Grand Theft Auto V and
+                        GTA Online for PlayStation 5 and Xbox Series X|S features new graphics modes with up to 4K
+                        resolution
+
+                        With the unprecedented longevity of GTAV, we know many of you have been asking us about a
+                        new entry
+                        in
+                        the Grand Theft Auto series. With every new project we embark on, our goal is always to
+                        significantly
+                        move beyond what we have previously delivered — and we are pleased to confirm that active
+
+                        ...
+                    </p>
+                </div>
+
+                <div class="news-card" style="max-width:100%;margin-top:1rem;">
+                    <h2 class="news-card__title">Tu Título Aquí</h2>
+                    <p class="news-card__text" id="text1">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cupiditate enim inventore
+                        minima culpa distinctio explicabo unde corporis perspiciatis saepe Grand Theft Auto V and
+                        GTA Online for PlayStation 5 and Xbox Series X|S features new graphics modes with up to 4K
+                        resolution
+
+                        With the unprecedented longevity of GTAV, we know many of you have been asking us about a
+                        new entry
+                        in
+                        the Grand Theft Auto series. With every new project we embark on, our goal is always to
+                        significantly
+                        move beyond what we have previously delivered — and we are pleased to confirm that active
+
+                        ...
+                    </p>
+                </div>
+
+                <!-- ACCESOS RÁPIDOS -->
+                <div class="card" style="width:100%;margin-top:1rem;height:auto;">
+                    <div class="card-imagenes">
+                        <a href="https://tulink1.com" target="_blank" class="card-img-item">
+                            <img src="imagenes/pre.jpg" alt="imagen 1" />
+                            <p>Misiones</p>
+                        </a>
+                        <a href="https://tulink2.com" target="_blank" class="card-img-item">
+                            <img src="imagenes/pre.jpg" alt="imagen 2" />
+                            <p>Discord</p>
+                        </a>
+                        <a href="https://tulink3.com" target="_blank" class="card-img-item">
+                            <img src="imagenes/3h1.webp" alt="imagen 3" />
+                            <p>Reglas</p>
+                        </a>
+                        <a href="https://tulink4.com" target="_blank" class="card-img-item">
+                            <img src="imagenes/pngwing.com (3).png" alt="imagen 4" />
+                            <p>Foro</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- VIDEOS -->
+                <div class="contenedor-nuevas" style="margin-top:1.5rem;">
                     <div class="card-video">
-                        <iframe class="video-card" src="https://www.youtube.com/embed/DZtvm1ATVD4" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="video-card" src="https://www.youtube.com/embed/DZtvm1ATVD4" frameborder="0"
+                            allowfullscreen></iframe>
                     </div>
                     <div class="card-video">
-                        <iframe class="video-card" src="https://www.youtube.com/embed/rE47fMId0Iw" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="video-card" src="https://www.youtube.com/embed/rE47fMId0Iw" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ===== REGLAS ===== -->
+            <div id="seccion-reglas" style="display:none">
+                <div class="CARDGRANDE" style="max-width:100%;">
+                    <h2 class="news-card__title">A New Generation for GTAV and GTA Online</h2>
+                    <p class="news-card__text">
+                        "With the unprecedented longevity of GTAV, we know many of you have been asking us about a
+                        new
+                        entry
+                        in
+                        the Grand Theft Auto series. With every new project we embark on, our goal is always to
+                        significantly
+                        move beyond what we have previously delivered — and we are pleased to confirm that active
+                        development
+                        for the next entry in the Grand Theft Auto series is well underway. We look forward to
+                        sharing
+                        more
+                        as
+                        soon as we are ready, so please stay tuned to the Rockstar Newswire for official details.
+
+                        Grand Theft Auto V and GTA Online for PlayStation 5 and Xbox Series X|S features new graphics
+                        modes
+                        with up to 4K resolution, up to 60 frames per second, texture and draw distance upgrades, HDR
+                        options and ray-tracing, as well as offering the technical advancements of the latest
+                        console
+                        generation with faster loading times, immersive 3D audio, platform-specific features like
+                        advanced
+                        haptic feedback, and much more.
+
+                        PS4 and Xbox One players eager to continue their journey on the newest generation of hardware
+                        will
+                        be able to transfer both their GTAV Story Mode progress and their current GTA Online
+                        characters
+                        and
+                        progression to PS5 and Xbox Series X|S with a one-time migration at launch.
+
+                        Plus, a new standalone version of GTA Online for PlayStation 5 and Xbox Series X|S will debut
+                        at
+                        launch — available for free for the first three months to PlayStation 5 players — making it
+                        easier
+                        than ever before for new players to experience everything GTA Online has to offer.
+
+                        Improvements to GTA Online
+                        GTA Online for PS5 and Xbox Series also includes a range of improvements including the
+                        ability
+                        to
+                        skip the GTAV Story Mode prologue before entering Online, and an all-new GTA Online Tutorial.
+                        New
+                        GTA Online players will now enter the Career Builder, with instant access to their choice of
+                        one
+                        of
+                        four illicit businesses — Biker, Executive, Nightclub Owner, or Gunrunner — and a sizable
+                        GTA$
+                        windfall to help select a property, high-end vehicle, and the firepower required to
+                        kickstart
+                        their
+                        enterprise. Returning players will also have the option to restart their character and take
+                        advantage of the Career Builder at any time.
+
+                        The PS5 and Xbox Series X|S versions of GTA Online also include the new Hao's Special Works
+                        auto
+                        shop, located within the LS Car Meet, which will allow players to upgrade select vehicles (5
+                        new
+                        vehicles and 5 existing vehicles at launch) for elite driving performance that takes full
+                        advantage
+                        of the upgraded power of new console hardware.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ===== MISIONES ===== -->
+            <div id="seccion-misiones" style="display:none">
+                <div class="page-header" style="padding:1.5rem;">
+                    <span class="page-eyebrow">Los Santos Community</span>
+                    <h1 class="page-title">Misiones <span>Disponibles</span></h1>
+                    <p class="page-desc">Entrá a la misión que quieras y coordiná con tu equipo.</p>
+                </div>
+                <div class="page-main" style="padding:1.5rem 0;">
+                    <div class="mision-card-simple">
+                        <h2 class="mision-card-titulo">Actividad</h2>
+                        <div class="mision-links">
+                            <a href="https://tulink1.com" target="_blank" class="mision-link-item">
+                                <span>link</span><span class="mision-link-arrow">→</span>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=kdfkr1WEzIc&list=RDkdfkr1WEzIc&index=1"
+                                target="_blank" class="mision-link-item">
+                                <span>link</span><span class="mision-link-arrow">→</span>
+                            </a>
+                            <a href="https://tulink3.com" target="_blank" class="mision-link-item">
+                                <span>link</span><span class="mision-link-arrow">→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-        </div>
-
-        <!-- ===== REGLAS ===== -->
-        <div id="seccion-reglas" style="display:none">
-            <div class="page-header">
-                <span class="page-eyebrow">Comunidad oficial</span>
-                <h1 class="page-title">Reglas de la <span>Comunidad</span></h1>
-                <p class="page-desc">Leé y respetá las reglas para mantener una comunidad sana.</p>
-            </div>
-            <div class="page-main">
-                <div class="rules-grid">
-                    <div class="rule-card">
-                        <div class="rule-num">01</div>
-                        <div class="rule-body">
-                            <h3>Respeto ante todo</h3>
-                            <p>No se toleran insultos, discriminación ni ataques personales.</p>
-                            <span class="rule-badge grave">Sanción grave</span>
-                        </div>
-                    </div>
-                    <div class="rule-card">
-                        <div class="rule-num">02</div>
-                        <div class="rule-body">
-                            <h3>No spam</h3>
-                            <p>Prohibido publicar mensajes repetidos o publicidad no autorizada.</p>
-                            <span class="rule-badge media">Sanción media</span>
-                        </div>
-                    </div>
-                    <div class="rule-card">
-                        <div class="rule-num">03</div>
-                        <div class="rule-body">
-                            <h3>Sin contenido inapropiado</h3>
-                            <p>No se permite contenido ofensivo o material para adultos.</p>
-                            <span class="rule-badge grave">Sanción grave</span>
-                        </div>
-                    </div>
-                    <div class="rule-card">
-                        <div class="rule-num">04</div>
-                        <div class="rule-body">
-                            <h3>No al cheating</h3>
-                            <p>El uso de hacks o exploits en eventos está completamente prohibido.</p>
-                            <span class="rule-badge grave">Ban permanente</span>
-                        </div>
-                    </div>
-                    <div class="rule-card">
-                        <div class="rule-num">05</div>
-                        <div class="rule-body">
-                            <h3>Un solo perfil</h3>
-                            <p>Crear múltiples cuentas para evadir sanciones resulta en ban permanente.</p>
-                            <span class="rule-badge grave">Ban permanente</span>
-                        </div>
-                    </div>
-                    <div class="rule-card">
-                        <div class="rule-num">06</div>
-                        <div class="rule-body">
-                            <h3>Publicá en la sección correcta</h3>
-                            <p>Los moderadores moverán o eliminarán posts fuera de lugar.</p>
-                            <span class="rule-badge leve">Aviso</span>
-                        </div>
-                    </div>
-                    <div class="rule-card">
-                        <div class="rule-num">07</div>
-                        <div class="rule-body">
-                            <h3>Respetá a los moderadores</h3>
-                            <p>Sus decisiones son finales. Usá el canal oficial para apelaciones.</p>
-                            <span class="rule-badge media">Sanción media</span>
-                        </div>
-                    </div>
-                    <div class="rule-card">
-                        <div class="rule-num">08</div>
-                        <div class="rule-body">
-                            <h3>Idioma español</h3>
-                            <p>Publicá en español para que todos puedan participar.</p>
-                            <span class="rule-badge leve">Aviso</span>
-                        </div>
+            <!-- ===== CAPTURAS — se llena desde Firebase ===== -->
+            <div id="seccion-capturas" style="display:none">
+                <div class="page-header" style="padding:1.5rem;">
+                    <span class="page-eyebrow"></span>
+                    <h1 class="page-title">Capturas de <span>Pantalla</span></h1>
+                    <p class="page-desc">Las mejores fotos de la comunidad.</p>
+                </div>
+                <div class="page-main" style="padding:1.5rem 0;">
+                    <div class="galeria-grid" id="galeria-grid">
+                        <!-- se llena automático desde Firebase -->
                     </div>
                 </div>
             </div>
+
+            <!-- MODAL imagen grande -->
+            <div id="modal-imagen"
+                style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:999; align-items:center; justify-content:center;">
+                <img id="modal-img" src="" alt=""
+                    style="max-width:90%; max-height:90vh; border-radius:4px; object-fit:contain;" />
+                <button onclick="cerrarModal()"
+                    style="position:fixed; top:20px; right:24px; background:none; border:none; color:#fff; font-size:32px; cursor:pointer; line-height:1;">✕</button>
+            </div>
+
         </div>
 
-        <!-- ===== MISIONES ===== -->
-        <div id="seccion-misiones" style="display:none">
-            <div class="page-header">
-                <span class="page-eyebrow">Los Santos Community</span>
-                <h1 class="page-title">Misiones <span>Disponibles</span></h1>
-                <p class="page-desc">Entrá a la misión que quieras y coordiná con tu equipo.</p>
-            </div>
-            <div class="page-main">
-                <div class="mision-card-simple">
-                    <h2 class="mision-card-titulo">Actividad</h2>
-                    <div class="mision-links">
-                        <a href="https://tulink1.com" target="_blank" class="mision-link-item">
-                            <span>link</span><span class="mision-link-arrow">→</span>
-                        </a>
-                        <a href="https://www.youtube.com/watch?v=kdfkr1WEzIc&list=RDkdfkr1WEzIc&index=1" target="_blank" class="mision-link-item">
-                            <span>link</span><span class="mision-link-arrow">→</span>
-                        </a>
-                        <a href="https://tulink3.com" target="_blank" class="mision-link-item">
-                            <span>link</span><span class="mision-link-arrow">→</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== CAPTURAS — se llena desde Firebase ===== -->
-        <div id="seccion-capturas" style="display:none">
-            <div class="page-header">
-                <span class="page-eyebrow"></span>
-                <h1 class="page-title">Capturas de <span>Pantalla</span></h1>
-                <p class="page-desc">Las mejores fotos de la comunidad.</p>
-            </div>
-            <div class="page-main">
-                <div class="galeria-grid" id="galeria-grid">
-                    <!-- se llena automático desde Firebase -->
-                </div>
-            </div>
-        </div>
-
-        <!-- MODAL imagen grande -->
-        <div id="modal-imagen"
-            style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:999; align-items:center; justify-content:center;">
-            <img id="modal-img" src="" alt=""
-                style="max-width:90%; max-height:90vh; border-radius:4px; object-fit:contain;" />
-            <button onclick="cerrarModal()"
-                style="position:fixed; top:20px; right:24px; background:none; border:none; color:#fff; font-size:32px; cursor:pointer; line-height:1;">✕</button>
-        </div>
+        <div class="clear-fix"></div>
 
         <!-- ===== FOOTER ===== -->
-        <footer class="footer">
-            <div class="footer-contenido">
-                <div class="footer-logo">
-                    <img src="imagenes/gta-grand-theft-auto.svg" alt="Logo GTA" />
-                    <p>Los Santos Community</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navegación</h4>
-                    <a href="#" onclick="mostrar('inicio', null)">Inicio</a>
-                    <a href="#" onclick="mostrar('foro', null)">Foro</a>
-                    <a href="#" onclick="mostrar('unete', null)">Únete</a>
-                    <a href="#" onclick="mostrar('reglas', null)">Reglas</a>
-                    <a href="#" onclick="mostrar('misiones', null)">Misiones</a>
-                </div>
-                <div class="footer-links">
-                    <h4>Comunidad</h4>
-                    <a href="#">Discord</a>
-                    <a href="#">Rockstar Social Club</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">YouTube</a>
-                </div>
-                <div class="footer-links">
-                    <h4>Soporte</h4>
-                    <a href="#">Ayuda</a>
-                    <a href="#">Reportar bug</a>
-                    <a href="#">Contacto</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 GTA V PY · Comunidad no oficial · Todos los derechos reservados</p>
-            </div>
-        </footer>
+        <div class="footer">
+            <p><strong>Los Santos Community</strong> — comunidad de fans de GTA V. Chat en vivo, misiones, capturas y
+                más.</p>
+            <p>© 2026 GTA V PY · Comunidad no oficial · Todos los derechos reservados</p>
+        </div>
 
         <script src="app.js"></script>
         <script type="module" src="chat-firebase.js"></script>
 
-    </div><!-- fin .contenedor -->
+    </div><!-- fin .container -->
 
 </body>
+
 </html>

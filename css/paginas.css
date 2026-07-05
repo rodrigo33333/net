@@ -8,263 +8,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #b7a0a0;
-  border-bottom: 1px solid rgba(159,168,50,0.2);
-  padding: 0 2rem;
-  height: 64px;
-}
-
-.navbar-logo img {
-  height: 40px;
-  width: auto;
-}
-
-.navbar-links {
-  list-style: none;
-  display: flex;
-  gap: 4px;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar-links a {
-  display: block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.65);
-  text-decoration: none;
-  padding: 6px 14px;
-  border-radius: 3px;
-  transition: color 0.15s, background 0.15s;
-}
-
-.navbar-links a:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.07);
-}
-
-.navbar-links a.activo {
-  background: #ea0000;
-  color: #e74900;
-}
-
-.encabezado {
-  background-image: url(../imagenes/wallhaven-ymzyx7_1920x1080.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  
-  max-height: 400px; /* ← limitá la altura acá */
-  overflow: hidden;  /* ← evita que la imagen se salga */
-}
-
-.encabezado::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* 0.5 = 50% oscuro, ajustá a tu gusto */
-  z-index: 0;
-}
-
-/* Asegurate que el contenido quede por encima del overlay */
-.contenedor-navegacion,
-.hero-section {
-  position: relative;
-  z-index: 1;
-}
-/* ---------- PAGE HEADER ---------- */
-
-.page-header {
-  background: #572727;
-  border-bottom: 1px solid rgba(159,168,50,0.15);
-  padding: 3rem 3rem 2.5rem;
-}
-
-.page-eyebrow {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  color: #a8326f;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 0.75rem;
-}
-
-.page-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 48px;
-  font-weight: 700;
-  color: #fff;
-  text-transform: uppercase;
-  line-height: 1;
-  margin-bottom: 0.75rem;
-}
-
-.page-title span {
-  color: #7e0091;
-}
-
-.page-desc {
-  font-size: 14px;
-  color: rgba(255,255,255,0.55);
-  max-width: 520px;
-  line-height: 1.6;
-}
-
-/* ---------- MAIN ---------- */
-
-.page-main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2.5rem 2rem;
-}
-
-/* ---------- REGLAS ---------- */
-
-.rules-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 12px;
-  margin-bottom: 2rem;
-}
-
-.rule-card {
-  display: flex;
-  gap: 16px;
-  background: #111;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 6px;
-  padding: 1.25rem;
-  transition: border-color 0.2s;
-}
-
-.rule-card:hover {
-  border-color: rgba(159,168,50,0.4);
-}
-
-.rule-num {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: rgba(159,168,50,0.25);
-  line-height: 1;
-  flex-shrink: 0;
-  width: 36px;
-}
-
-.rule-body h3 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-.rule-body p {
-  font-size: 13px;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-.rule-badge {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 2px;
-}
-
-.rule-badge.grave  { background: rgba(192,57,43,0.18); color: #e74c3c; border: 1px solid rgba(192,57,43,0.3); }
-.rule-badge.media  { background: rgba(230,126,34,0.18); color: #e67e22; border: 1px solid rgba(230,126,34,0.3); }
-.rule-badge.leve   { background: rgba(159,168,50,0.15); color: #9fa832; border: 1px solid rgba(159,168,50,0.3); }
-
-.rules-footer {
-  text-align: center;
-  padding: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.07);
-  font-size: 13px;
-  color: rgba(255,255,255,0.4);
-}
-
-.rules-footer a {
-  color: #000000;
-  text-decoration: none;
-}
-
-.rules-footer a:hover {
-  text-decoration: underline;
-}
-
-/* ---------- CARD MISIÓN SIMPLE ---------- */
-
-.mision-card-simple {
-    background: none;
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 8px;
-    padding: 0.25;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.mision-card-titulo {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #000000;
-    text-transform: uppercase;
-    margin-bottom: 1.25rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-}
-
-.mision-links {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.mision-link-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 14px;
-    background: #1a1a1a;
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 5px;
-    color: rgba(255,255,255,0.75);
-    text-decoration: none;
-    font-size: 14px;
-    transition: background 0.15s, border-color 0.15s;
-}
-
-.mision-link-item:hover {
-    background: #222;
-    border-color: #9fa832;
-    color: #fff;
-}
-
-.mision-link-arrow {
-    color: #9fa832;
-    font-size: 16px;
-}
-
-/* ============================================================
-   paginas.css — Estilos para páginas internas (Reglas, Misiones)
-   ============================================================ */
-
-/* ---------- NAVBAR ---------- */
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background: #0a0a0a;
   border-bottom: 1px solid rgba(159,168,50,0.2);
   padding: 0 2rem;
@@ -304,14 +47,21 @@
 }
 
 .navbar-links a.activo {
-  background: #9fa832;
-  color: #1a1d05;
+  background: #FFD700;
+  color: #000;
+}
+
+/* Asegurate que el contenido quede por encima del overlay */
+.contenedor-navegacion,
+.hero-section {
+  position: relative;
+  z-index: 1;
 }
 
 /* ---------- PAGE HEADER ---------- */
 
 .page-header {
-  background: #0f0f0f;
+  background: #ec6262;
   border-bottom: 1px solid rgba(159,168,50,0.15);
   padding: 3rem 3rem 2.5rem;
 }
@@ -434,42 +184,42 @@
   text-decoration: underline;
 }
 
+/* ---------- HERO (paginas internas) ---------- */
+
 .hero-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 200px;
   overflow: hidden;
-  position: relative; /* solo para el personaje */
+  position: relative;
 }
 
 .hero-content {
-  flex: 1;           /* ocupa el espacio disponible */
+  flex: 1;
   padding: 40px 60px;
   z-index: 2;
 }
 
 .personaje-hero {
-
   margin-right: 10px;
   height: 350px;
   max-height: 480px;
   object-fit: contain;
-  flex-shrink: 0;    /* no se achica */
+  flex-shrink: 0;
   z-index: 2;
 }
 
 .slider {
-
   align-self: flex-start;
   width: 280px;
   height: 180px;
-  flex-shrink: 0;    /* no se achica */
+  flex-shrink: 0;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: -8px 8px 32px rgba(0, 0, 0, 0.8);
-  margin-right: 20px; /* separación del borde */
-  position: relative; /* para los slides adentro */
+  margin-right: 20px;
+  position: relative;
 }
 
 .slide {
@@ -616,16 +366,151 @@
   background: #c8d640;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ---------- CARD MISIÓN SIMPLE ---------- */
 
-@media (max-width: 600px) {
-  .navbar { padding: 0 1rem; }
-  .navbar-links { gap: 2px; }
-  .navbar-links a { padding: 6px 8px; font-size: 11px; }
-  .page-header { padding: 2rem 1.5rem; }
-  .page-title { font-size: 34px; }
-  .page-main { padding: 1.5rem 1rem; }
-  .rules-grid, .missions-grid { grid-template-columns: 1fr; }
+.mision-card-simple {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 0.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mision-card-titulo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.mision-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mision-link-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    background: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 5px;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.mision-link-item:hover {
+    background: #222;
+    border-color: #9fa832;
+    color: #fff;
+}
+
+.mision-link-arrow {
+    color: #9fa832;
+    font-size: 16px;
+}
+
+/* mision-parrafo: tamaño corregido (estaba en 100px, causaba texto gigante) */
+.mision-parrafo {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* palabra con color distinto y clickeable */
+.texto-link {
+    color: #f32d00;
+    cursor: pointer;
+    transition: color 0.15s;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-decoration: none;
+}
+
+.texto-link:hover {
+    color: #dd1533;
+}
+
+/* ---------- GLITCH ---------- */
+
+.data-text {
+  font-size: 15px;
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+  color: #00d9a0;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+}
+.glitch::before {
+  color: #ff003c;
+  clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
+}
+.glitch::after {
+  color: #00cfff;
+  clip-path: polygon(0 60%, 100% 60%, 100% 75%, 0 75%);
+}
+.glitch.active::before { transform: translateX(-3px); }
+.glitch.active::after  { transform: translateX(3px); }
+
+/* ---------- IMAGEN FIREBASE ---------- */
+
+.imagen-aleatoria {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  cursor: pointer;
+  position: relative;
+  background: #161616;
+}
+
+.imagen-aleatoria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.imagen-aleatoria:hover img {
+  transform: scale(1.05);
+}
+
+.imagen-aleatoria .mini-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  opacity: 0;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.imagen-aleatoria:hover .mini-overlay {
+  background: rgba(0,0,0,0.45);
+  opacity: 1;
 }
 
 /* ---------- MINI GALERÍA SIDEBAR ---------- */
@@ -745,86 +630,21 @@
   opacity: 1;
 }
 
-@media (max-width: 600px) {
-  .mini-galeria { grid-template-columns: repeat(3, 1fr); }
-  .galeria-grid { grid-template-columns: repeat(2, 1fr); }
-  .galeria-item img { height: 130px; }
-}
-
-
-/*CARD CON LINK ADENTRO*/
-
-.mision-parrafo {
-    font-size: 100px;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.7;
-    margin-bottom: 1rem;
-}
-
-/* palabra con color distinto y clickeable */
-.texto-link {
-    color: #f32d00;
-    text-decoration: underline;
-    cursor: pointer;
-    transition: color 0.15s;
-
-    /* tamaño */
-    font-size: 16px;
-
-    /* grosor */
-    font-weight: 700;
-
-    /* fuente distinta */
-    font-family: 'Barlow Condensed', sans-serif;
-
-    /* sin subrayado */
-    text-decoration: none;
-
-    /* subrayado solo al hover */
-    text-decoration: none;
-
-}
-
-.texto-link:hover {
-    color: #dd1533;
-}
-
-/*======================================*/
-
-.data-text {
-  font-size: 15px;
-}
-
-.glitch {
-  
-  position: relative;
-  display: inline-block;
-  color: #00d9a0;
-}
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-}
-.glitch::before {
-  color: #ff003c;
-  clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
-}
-.glitch::after {
-  color: #00cfff;
-  clip-path: polygon(0 60%, 100% 60%, 100% 75%, 0 75%);
-}
-.glitch.active::before { transform: translateX(-3px); }
-.glitch.active::after  { transform: translateX(3px); }
-
-
-
 /* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 600px) {
-  /* filtros de misiones en columna */
+  .navbar { padding: 0 1rem; }
+  .navbar-links { gap: 2px; }
+  .navbar-links a { padding: 6px 8px; font-size: 11px; }
+  .page-header { padding: 2rem 1.5rem; }
+  .page-title { font-size: 34px; }
+  .page-main { padding: 1.5rem 1rem; }
+  .rules-grid, .missions-grid { grid-template-columns: 1fr; }
+
+  .mini-galeria { grid-template-columns: repeat(3, 1fr); }
+  .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+  .galeria-item img { height: 130px; }
+
   .mission-filters {
     flex-wrap: wrap;
     gap: 6px;
@@ -835,7 +655,6 @@
     padding: 5px 12px;
   }
 
-  /* cards de misión más compactas */
   .mission-card {
     padding: 1rem;
   }
@@ -844,7 +663,6 @@
     font-size: 15px;
   }
 
-  /* cards de reglas más compactas */
   .rule-card {
     gap: 10px;
     padding: 1rem;
@@ -859,7 +677,6 @@
     font-size: 14px;
   }
 
-  /* header más chico */
   .page-title {
     font-size: 28px;
   }
